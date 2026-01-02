@@ -1,10 +1,22 @@
 @charset "UTF-8";
+@font-face {
+  font-family: "MaisonNeue";
+  src: url(/public/font/MaisonNeueWEB-Light.woff2) format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "MaisonNeue";
+  src: url(/public/font/MaisonNeueWEB-Demi.woff2) format("woff2");
+  font-weight: 700;
+  font-display: swap;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-weight: 400;
-  font-family: "Outfit", sans-serif;
+  font-weight: 300;
+  font-family: "MaisonNeue", sans-serif;
   font-size: 14px;
 }
 @media (min-width: 992px) {
@@ -32,26 +44,11 @@
     font-size: 18px;
   }
 }
-@media (min-width: 1900px) {
-  * {
-    font-size: 20px;
-  }
-}
 
 body {
   transition: 0.5s ease all;
   overflow-x: hidden;
-}
-
-.container-header {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 94.062%;
-}
-@media (min-width: 992px) {
-  .container-header {
-    max-width: 90.8478%;
-  }
+  color: #737374;
 }
 
 .container-ctn {
@@ -66,7 +63,7 @@ body {
 }
 @media (min-width: 992px) {
   .container-ctn {
-    max-width: 88.076%;
+    max-width: 87.8662%;
   }
 }
 
@@ -527,7 +524,7 @@ roll::-webkit-scrollbar-track {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #FFD52B;
+  background-color: #EF4136;
   border-radius: 10px;
   /* GAP using border and background clip */
   border: 2px solid transparent;
@@ -593,7 +590,7 @@ li {
   background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.1006 12H3.10058" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.1006 18L21.1006 12L15.1006 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
   background-size: contain;
   background-repeat: no-repeat;
-  background-color: #FFD52B;
+  background-color: #EF4136;
   border-radius: 50%;
   background-position: center center;
   left: 0;
@@ -711,7 +708,6 @@ select:focus-within {
 select {
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 20 12" fill="none"> <path d="M19.513 0.438696C19.2317 0.157489 18.8502 -0.000484467 18.4525 -0.000484467C18.0547 -0.000484467 17.6733 0.157489 17.392 0.438696L9.96697 7.8637L2.54197 0.438696C2.25907 0.165459 1.88016 0.014267 1.48687 0.0176849C1.09357 0.021102 0.717352 0.178856 0.43924 0.456967C0.161127 0.73508 0.00337601 1.1113 -4.19617e-05 1.50459C-0.00345993 1.89789 0.147732 2.27679 0.420969 2.5597L8.90647 11.0452C9.18776 11.3264 9.56922 11.4844 9.96697 11.4844C10.3647 11.4844 10.7462 11.3264 11.0275 11.0452L19.513 2.5597C19.7942 2.2784 19.9521 1.89694 19.9521 1.4992C19.9521 1.10145 19.7942 0.719987 19.513 0.438696Z" fill="black"/> </svg>');
   border: unset;
-  width: 100%;
   background-repeat: no-repeat;
   background-position: 95%;
   -moz-appearance: none;
@@ -835,7 +831,7 @@ input[type=number] {
 .dropDown {
   margin-bottom: 24px;
   border-radius: 8px;
-  background: #FFD52B;
+  background: #EF4136;
   font-size: 16px;
   line-height: 24px;
 }
@@ -921,7 +917,7 @@ input[type=number] {
   height: auto;
 }
 .slick-nav div svg:hover path {
-  fill: #FFD52B;
+  fill: #EF4136;
 }
 
 .modal-backdrop.show {
@@ -939,6 +935,96 @@ input[type=number] {
 
 .fancybox-button svg {
   filter: invert(1);
+}
+
+header {
+  position: fixed;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  z-index: 22;
+}
+header button {
+  gap: 12px;
+}
+header .container-ctn {
+  border-radius: 100px;
+  padding: 0px 32px;
+  background: #FFF;
+}
+header .header-left {
+  width: 394px;
+}
+header .header-left button {
+  padding: 39.5px 30px;
+  margin-left: 30px;
+  border-left: 1px solid #EEEEEE;
+  border-right: 1px solid #EEEEEE;
+}
+header .header-right {
+  width: 794px;
+  justify-content: flex-end;
+  /* show menu */
+}
+header .header-right .language-switcher {
+  position: relative;
+  display: inline-block;
+  font-family: inherit;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+header .header-right .lang-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #f2f2f2;
+  border: none;
+  cursor: pointer;
+}
+header .header-right .lang-btn .chevron {
+  font-size: 12px;
+}
+header .header-right .lang-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  min-width: 140px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 6px 0;
+  margin: 0;
+  display: none;
+  z-index: 1000;
+}
+header .header-right .lang-menu li {
+  padding: 10px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+header .header-right .lang-menu li:hover {
+  background: #0d6efd;
+  color: #fff;
+}
+header .header-right .language-switcher.open .lang-menu {
+  display: block;
+}
+header .header-right select {
+  line-height: normal;
+  padding-right: 48px;
+  background-position: 78%;
+}
+header .header-right a {
+  color: #EF4136;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+header .header-right a + a {
+  margin-left: 30px;
 }
 
 .mobDropDown {
@@ -973,7 +1059,7 @@ input[type=number] {
   background: #fff;
 }
 .mobDropDown .dropdown-menu li:hover a {
-  color: #FFD52B;
+  color: #EF4136;
 }
 
 .offcanvas {
@@ -1585,7 +1671,7 @@ input[type=number] {
 }
 
 .bgYellow {
-  background: #FFD52B;
+  background: #EF4136;
 }
 
 .bgCancel {
@@ -1722,6 +1808,11 @@ input[type=number] {
     transform: rotate(360deg);
   }
 }
+.banner h1 {
+  font-weight: 700;
+  font-size: 220px;
+}
+
 .innner-banner {
   background: #F5F5F5;
   padding-top: clamp(100px, 8.4899vw, 163px);
@@ -1947,7 +2038,7 @@ input[type=number] {
   border-radius: 80px;
   width: 17.595%;
   height: 4px;
-  background: #FFD52B;
+  background: #EF4136;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
@@ -2543,7 +2634,7 @@ input[type=number] {
 }
 
 .bgYellow {
-  background: #FFD52B;
+  background: #EF4136;
 }
 
 .bgCancel {
@@ -3565,7 +3656,7 @@ a.contact-box:hover span path {
 }
 .faq .accordion-button::after {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M11.9734 1.49677C11.775 1.49677 11.5846 1.5756 11.4443 1.71593C11.304 1.85626 11.2251 2.04659 11.2251 2.24505V19.8942L6.51692 15.1845C6.37641 15.044 6.18584 14.965 5.98713 14.965C5.78842 14.965 5.59785 15.044 5.45734 15.1845C5.31683 15.325 5.23789 15.5155 5.23789 15.7143C5.23789 15.913 5.31683 16.1035 5.45734 16.244L11.4436 22.2304C11.5132 22.3 11.5957 22.3553 11.6866 22.3931C11.7776 22.4308 11.875 22.4502 11.9734 22.4502C12.0719 22.4502 12.1693 22.4308 12.2602 22.3931C12.3511 22.3553 12.4337 22.3 12.5032 22.2304L18.4895 16.244C18.5591 16.1745 18.6143 16.0919 18.652 16.001C18.6896 15.9101 18.709 15.8126 18.709 15.7143C18.709 15.5155 18.63 15.325 18.4895 15.1845C18.349 15.044 18.1585 14.965 17.9598 14.965C17.761 14.965 17.5705 15.044 17.43 15.1845L12.7217 19.8942V2.24505C12.7217 2.04659 12.6429 1.85626 12.5026 1.71593C12.3622 1.5756 12.1719 1.49677 11.9734 1.49677Z" fill="%230A1119"/></svg>');
-  background-color: #FFD52B;
+  background-color: #EF4136;
   background-position: center center;
   border-radius: 50%;
   right: 0;
@@ -3772,7 +3863,7 @@ section.thank-you p {
 }
 .product-details .btn-call {
   color: #0A1119;
-  background: #FFD52B;
+  background: #EF4136;
 }
 .product-details .btn-call:hover {
   background: #0A1119;
@@ -4275,7 +4366,7 @@ section.thank-you p {
   height: 4px;
   width: 0%;
   border-radius: 80px;
-  background: #FFD52B;
+  background: #EF4136;
   z-index: 5;
 }
 .product-detail .slick-active.slick-current .progress-container {
@@ -4673,13 +4764,13 @@ section.thank-you p {
   }
 }
 .filter-buttons button.active {
-  background: #FFD52B;
+  background: #EF4136;
 }
 .filter-buttons button.active::after {
   width: 100%;
 }
 .filter-buttons button.active path {
-  fill: #FFD52B;
+  fill: #EF4136;
 }
 .filter-buttons button.active span {
   font-weight: 600;
@@ -4741,7 +4832,7 @@ section.thank-you p {
   }
 }
 .close-btn:hover {
-  background-color: #FFD52B;
+  background-color: #EF4136;
 }
 .close-btn:hover svg {
   filter: invert(1);
@@ -4866,7 +4957,7 @@ img.popup-image {
   gap: 8px;
 }
 .popup-nav span:hover {
-  color: #FFD52B;
+  color: #EF4136;
 }
 .popup-nav svg {
   height: auto;
@@ -4979,7 +5070,7 @@ img.popup-image {
 .applay-btn {
   line-height: 125%;
   border-radius: 80px;
-  background-color: #FFD52B;
+  background-color: #EF4136;
   color: #000;
   display: flex;
   align-items: center;
@@ -5392,10 +5483,10 @@ img.popup-image {
   left: 0;
 }
 .newsDetail article .navigation-and-share .navigation a:hover {
-  color: #FFD52B;
+  color: #EF4136;
 }
 .newsDetail article .navigation-and-share .navigation a:hover path {
-  stroke: #FFD52B;
+  stroke: #EF4136;
 }
 @media (min-width: 768px) {
   .newsDetail article ul:has(li:nth-child(5)) {

@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-weight: 400;
+  font-weight: 300;
   font-family: $primary-font;
   font-size: 14px;
 
@@ -27,28 +27,14 @@
     font-size: 18px;
   }
 
-  @include min(1900) {
-    font-size: 20px;
-  }
+
 }
 
 body {
   transition: 0.5s ease all;
   overflow-x: hidden;
-
+  color: #737374;
 }
-
-.container-header {
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 94.062%;
-
-  @include min(992) {
-    max-width: 90.8478%;
-  }
-}
-
-
 
 .container-ctn {
   max-width: 92%;
@@ -60,10 +46,8 @@ body {
   }
 
   @include min(992) {
-    max-width: 88.076%
+    max-width: 87.8662%;
   }
-
-  
 }
 
 
@@ -670,7 +654,6 @@ select {
 select {
   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="12" viewBox="0 0 20 12" fill="none"> <path d="M19.513 0.438696C19.2317 0.157489 18.8502 -0.000484467 18.4525 -0.000484467C18.0547 -0.000484467 17.6733 0.157489 17.392 0.438696L9.96697 7.8637L2.54197 0.438696C2.25907 0.165459 1.88016 0.014267 1.48687 0.0176849C1.09357 0.021102 0.717352 0.178856 0.43924 0.456967C0.161127 0.73508 0.00337601 1.1113 -4.19617e-05 1.50459C-0.00345993 1.89789 0.147732 2.27679 0.420969 2.5597L8.90647 11.0452C9.18776 11.3264 9.56922 11.4844 9.96697 11.4844C10.3647 11.4844 10.7462 11.3264 11.0275 11.0452L19.513 2.5597C19.7942 2.2784 19.9521 1.89694 19.9521 1.4992C19.9521 1.10145 19.7942 0.719987 19.513 0.438696Z" fill="black"/> </svg>');
   border: unset;
-  width: 100%;
   background-repeat: no-repeat;
   background-position: 95%;
   -moz-appearance: none;
