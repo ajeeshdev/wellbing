@@ -1,0 +1,59 @@
+
+.mobDropDown {
+ position: relative;
+ // &:hover{
+ //  .dropdown-menu{
+ //   display: block;
+ //   transition: 0.5s ease all;
+ //  }
+ // }
+
+ button {
+  background: unset;
+  &:focus-visible{
+   border: unset;
+   overflow: unset;
+  }
+
+  svg {
+   height: auto;
+   width:  clamp(15px, 1.3vw, 24px);
+   transform: rotate(0deg);
+   transition: transform 0.5s ease;
+  }
+
+  &.show {
+   svg {
+    transition: transform 0.5s ease;
+    transform: rotate(180deg);
+   }
+
+  }
+ }
+
+ .dropdown-menu {
+  position: unset !important;
+  transform: translate(0) !important;
+  border: unset;
+  padding-top: 15px;
+  padding-left: 15px;
+  
+  background: unset;
+
+
+  li {
+
+
+   &:hover {
+    background: $white;
+
+    a {
+     color: $primaryColor;
+
+    }
+   }
+
+  }
+ }
+}
+

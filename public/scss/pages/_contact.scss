@@ -1,0 +1,255 @@
+.contact-section-row{
+    
+    input[type="text"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="email"],select {
+    height:clamp(35px, 3.6459vw, 70px);
+    font-weight: 200;
+    &::placeholder{
+        font-weight: 200;
+
+    }
+  }
+
+  textarea {
+    height: clamp(70px, 7.44799vw, 143px);
+      &::placeholder{
+        font-weight: 200;
+
+    }
+  }
+  button{
+    &:focus{
+        outline: unset;
+        border: unset;
+    }
+  }
+    picture{
+        width: 100%;
+        @include min(768){width: 44.263%;}
+        img{
+            width: 100%;
+            object-fit: cover;
+            height:  clamp(250px, 21.4065vw, 411px);
+        }
+    }
+    form{
+        width: 100%;
+        @include max(767){
+            margin-top: 20px;
+        }
+        @include min(768){
+            width: 50.145%;
+
+        }
+        column-gap:  2.8%;
+        justify-content: space-between;
+        .formGroup{
+                margin-bottom:  clamp(15px, 1.24999vw, 24px);
+        }
+        input{
+            width: 100%;
+            border-radius: 5px;
+border: 1px solid #C9C9C9;
+background: #FFF;
+
+        }
+  .buttonGroup {
+    display: flex;
+    gap: 9px;
+    margin-top: 15px;
+
+    button {
+      border-radius: 80px;
+      display: flex;
+      align-items: center;
+      line-height: 125%;
+          height: 33px;
+    padding: 0 21px;
+    @include min(992){
+          height: 36px;
+    padding: 0 26px;
+    }
+    @include min(1200){
+          height: 38px;
+    padding: 0 28px;
+    }
+    @include min(1350){
+        height: 42px;
+      padding: 0 30px;
+    
+    }
+  }
+
+    button + button {
+      border: 1px solid #D9D9D9;
+      color: #4F5762;
+
+      &:hover {
+        background: #4F5762;
+        color: #fff;
+        border-color: #7a7a7a;
+      }
+    }
+  }
+
+
+    }
+    .col--6{
+        width: 100%;
+        @include min(576){
+            width: 48.5532%;
+
+        }
+    }
+}
+
+
+.locations{
+    background: #F4F4F4;
+    .head{
+      margin-bottom: clamp(47px, 4.948vw, 95px);
+    }
+}
+
+.location-card{
+  @include min(768){
+    padding-right: 6.473%;
+
+  }
+
+  + div{
+    margin-top: clamp(38px, 3.96vw, 76px);
+    padding-top: clamp(38px, 3.96vw, 76px);
+    border-top: 1px solid  rgba(0, 0, 0, 0.21);
+  }
+   
+    picture{
+  
+    }
+    img{
+        width: 100%;
+    }
+    i{
+        display: block;
+        width: clamp(48px, 5vw, 96px);
+
+    }
+    .location-title {
+        gap: 4.1%;
+        margin: 10px 0;
+        @include min(768){margin: 12px 0;}
+        @include min(992){margin: 14px 0;}
+        @include min(1200){margin: 16px 0;}
+        @include min(1350){margin: 18px 0;}
+        @include min(1440){margin: 20px 0;}
+        @include min(1600){margin: 22px 0;}
+        @include min(1900){margin: 24px 0;}
+    }
+    .address{
+        color: #4B535D;
+line-height: 160%; /* 160% */
+width: 87.84%;
+margin-bottom: clamp(16px, 1.615vw, 31px);
+
+    }
+    .left-box{
+      a{
+          width: fit-content;
+          line-height:  88.889%;
+          color: #0A1119;
+          gap: 8px;
+          border-bottom: 1px solid #0A1119;
+          padding-bottom: 11px;
+          font-size: clamp(12px, 0.94vw, 18px);
+      }
+         width: 100%;
+         @include min(992){
+           width: 26.366%;
+
+         }
+    }
+    .right-box{
+         height: fit-content;
+         display: flex;
+         align-items: flex-start;
+         flex-wrap: wrap;
+         width: 100%;
+        gap: 12px 2.8%;
+        @include max(991){
+          margin-top: 30px;
+        }
+          @include min(768){gap: 15px 2.8%;}
+          @include min(992){gap: 17px 2.8%;    width: 60.508%;}
+          @include min(1200){gap: 19px 2.8%;}
+          @include min(1350){gap: 21px 2.8%;}
+          @include min(1440){gap: 23px 2.8%;}
+          @include min(1600){gap: 25px 2.8%;}
+          @include min(1900){gap: 27px 2.8%;}
+        .right-box-card{  
+            display: flex;
+            align-items: center;
+            width: 100%;
+            background-color: #fff;
+                height: fit-content;
+                gap: 9%;
+                padding: 10px 20px;
+                @include max(575){
+                  min-height: 70px;
+                }
+                @include min(768){padding: 12px 15px;    width: 48.584%;}
+                @include min(992){padding: 14px 18px;}
+                @include min(1200){padding: 20px  25px;}
+                @include min(1350){padding: 22px 30px;}
+                @include min(1440){padding: 24px 39px;}
+                @include min(1600){padding: 26px 41px;}
+                @include min(1900){padding: 28px 43px;}
+                p{
+                  font-weight: 300;
+                  margin-bottom: 5px;
+                  @include min(768){margin-bottom: 6px;}
+                  @include min(1200){margin-bottom: 7px;}
+                  @include min(1350){margin-bottom: 8px;}
+                  @include min(1440){margin-bottom: 10px;}
+                  @include min(1600){margin-bottom: 12px;}
+                }
+                a,span{
+                  display: block;
+                  color: #000;
+                  font-weight: 500;
+                  line-height: 100%;
+                  font-size: 20px;
+                  @include min(992){
+                    font-size: clamp(16px, 1.46vw, 28px);
+
+                  }
+                  +a,+ span{
+                    margin-top: 5px;
+                    @include min(768){margin-top: 6px;}
+                    @include min(992){margin-top: 7px;}
+                    @include min(1200){margin-top: 8px;}
+                    @include min(1350){margin-top: 9px;}
+                    @include min(1440){margin-top: 10px;}
+                    @include min(1600){margin-top: 11px;}
+                    @include min(1900){margin-top: 12px;}
+                  }
+
+                }
+                i{
+                  width: 30px;
+                  @include min(992){
+                    width: clamp(24px, 2.7vw, 48px);
+
+                  }
+                  svg{
+                    width: 100%;
+                    height: auto;
+                  }
+                }
+              div{
+                width: 82.05%;
+              }
+        }
+    }
+}

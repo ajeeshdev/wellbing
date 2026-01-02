@@ -1,0 +1,418 @@
+.innner-banner {
+    background: #F5F5F5;
+
+    padding-top: clamp(100px, 8.4899vw, 163px);
+
+    &::before {
+        @extend .position;
+        width: 100%;
+        height: clamp(80px, 8.438vw, 162px);
+        background-color: #fff;
+        bottom: 0;
+        z-index: -0;
+    }
+
+    picture {
+        z-index: 1;
+        position: relative;
+        margin-left: auto;
+        width: 72.906%;
+
+        @include min(576) {
+            width: 64.906%;
+
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+        &::after{
+            @extend .position;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.44);
+            backdrop-filter: blur(0px);
+        }
+    }
+}
+
+.breadcrumb {
+    bottom: 0;
+    margin: 0;
+
+    @include max(575) {
+        padding: 15px 0px;
+    }
+
+    @include min(576) {
+        position: absolute;
+
+    }
+
+    li {
+        position: relative;
+        color: #4B535D;
+        font-weight: 200;
+
+
+        a {
+            color: #4B535D;
+            font-weight: 200;
+
+            &:hover {
+                color: #FFA600;
+                font-weight: 400;
+            }
+
+
+
+        }
+
+        +li {
+            margin-left: clamp(8px, 0.84vw, 16px);
+            padding-left: clamp(19px, 1.355vw, 26px);
+
+            &::before {
+                @extend .position;
+                border-radius: 0.9px;
+                background: #D9D9D9;
+
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%) rotate(-45deg);
+                width: 10px;
+                height: 10px;
+
+            }
+
+            &:last-child {
+                color: #FFA600;
+                font-weight: 400;
+
+                a {
+                    color: #FFA600;
+                    font-weight: 400;
+
+
+                }
+            }
+        }
+    }
+}
+
+
+/* Rotate the badge around the center */
+#badge {
+    transform-origin: 232.708px 229.708px;
+    animation: spin 12s linear infinite;
+}
+
+/* Optional: subtle “draw” feel on rings */
+#rings circle {
+    stroke-dasharray: 6 10;
+    animation: dash 3.5s linear infinite;
+}
+
+.play-video {
+    width: 70%;
+        @include max(767){
+                margin: auto;
+
+            }
+    @include min(768){
+        width: 27.732%;
+
+    }
+
+    svg {
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+.who-we-are {
+    &-row {
+        gap:clamp(15px, 2.12vw, 37px) ;
+    }
+
+    .head {
+        margin-bottom: clamp(15px, 1.719vw, 30px);
+    }
+
+    .play-video {
+        background: unset;
+
+        // cursor: pointer;
+        +picture {
+            width: 100%;
+            @include min(768){
+                width: 65.677%;
+
+            }
+
+            img {
+                border-radius: 10px;
+                width: 100%;
+                height: auto;
+                       @include min(768){border-radius: 15px;}
+                @include min(992){border-radius: 18px;}
+                @include min(1200){border-radius: 20px;}
+            }
+        }
+    }
+
+    .row-second {
+        padding-top: clamp(30px, 3.12499vw, 60px);
+    }
+
+    .ceo {
+        width: 100%;
+        @include min(992){
+            width:55.582%;
+
+        }
+
+        >svg {
+            height: auto;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width:clamp(42px, 4.375vw, 84px) ;
+
+        }
+
+        h2,
+        h3 {
+            white-space: pre-line;
+            margin-bottom: clamp(17px, 1.771vw, 34px);
+        }
+
+        >p {
+
+            font-weight: 300;
+            line-height: 150%;
+            font-size:  clamp(16px, 1.67vw, 32px);
+
+        }
+
+        &-details {
+            margin-top: clamp(22px, 2.188vw, 42px);
+
+            picture {
+                margin-bottom: 14.5px;
+            }
+
+            div {
+                font-size:clamp(16px, 1.25vw, 24px) ;
+                margin-bottom: 14px;
+            }
+
+            span {
+                font-weight: 200;
+            }
+            img{
+                width: clamp(80px, 6.25vw, 120px);
+            }
+        }
+    }
+
+    .mission-vission {
+        position: relative;
+        height: fit-content;
+        padding: clamp(24px, 2.49999vw, 48px);
+        
+        border-radius: 20px;
+        background: #F9F9F9;
+        width: 100%;
+        @include max(991){
+            margin-top: clamp(30px, 3.12499vw, 60px);
+        }
+        @include min(992){
+                  width: 38.777%;
+        }
+
+        h2 {
+            padding-bottom: clamp(8px, 0.84vw, 16px);
+            margin-bottom: clamp(14px, 1.4591vw, 28px);
+            position: relative;
+
+            &::after {
+                border-radius: 80px;
+                @extend .position;
+                width: 17.595%;
+                height: 4px;
+                background: $primaryColor;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        &-content {
+            color: #4B535D;
+
+            line-height: 160%;
+
+        }
+
+        .slick-dots {
+            margin-top:  clamp(20px, 2.084vw, 40px);
+            justify-content: center;
+        }
+
+        svg {
+            height: auto;
+             width:clamp(40px, 4.219vw, 81px) ;
+            position: absolute;
+            right: 28px;
+            bottom: 28px;
+        }
+
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.why-choose{
+    background: #F8F8F8;
+            padding-top: clamp(36px, 3.75vw, 72px);
+        padding-bottom: clamp(36px, 3.75vw, 72px);
+    h2{
+        margin-bottom: 20px;
+        @include min(1200)  {
+                  margin-bottom: 36px;
+        }
+    }
+    ul{
+        width: 100%;
+        @include min(768){
+            width: 30.107%;
+
+        }
+        &:first-child{order: 1;}
+        &:nth-last-child(2){order: 3;}
+
+        li{
+            +li{
+                margin-top: clamp(25px, 3.75vw, 72px);
+            }
+        }
+    }
+    picture{
+        order: 2;
+        mask-image: url(../images/about/mask.png);
+        mask-size: 100%;
+        mask-repeat: no-repeat;
+        width: 100%;
+        @include max(767){
+                margin:  30px auto;
+            }
+        @include min(768){
+                 width: 31.651%;
+        }
+    }
+    span{
+        font-weight: 500;
+        display: block;
+          margin-bottom: clamp(6px, 0.63vw, 12px);
+    }
+    P{
+        color: #4B535D;
+        line-height: 160%; /* 160% */
+    }
+}
+
+
+
+
+
+
+
+// =================production================
+
+.production{
+    + .awards{
+        background: #F8F8F8;
+    }
+    .d-flex{
+        border: 1px solid #C3D0E3;
+        padding: clamp(10px, 2.761vw, 53px);
+    }
+    &-image{
+        width: 100%;
+            @include min(992){
+                 width: 37.056%;
+            }
+        svg{
+            width: 86.988%;
+            height: auto;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+    }
+    picture{
+        height: 100%;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+    }
+    &-description{
+        position: relative;
+        background: #121C27;
+        padding: clamp(15px, 3.438vw, 66px);
+        width: 100%;
+        @include min(992){
+            padding: clamp(33px, 3.438vw, 66px);
+            width: 60.597%;
+
+        }
+        &::before{
+            @extend .position;
+            right: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="228" height="100" viewBox="0 0 228 100" fill="none"><rect x="18.5" y="0.5" width="209" height="99" stroke="%23C3D0E3" stroke-opacity="0.21"/><rect x="0.5" y="0.5" width="227" height="80" stroke="%23C3D0E3" stroke-opacity="0.21"/></svg>');
+            background-repeat: no-repeat;
+            background-position: right top;
+        }
+
+        h2,p{
+            color: #ffff;
+        }
+
+        h2{
+            line-height: normal;
+        }
+        p{
+            color: #CECECE;
+            line-height:  160%;
+            margin-bottom: 16px;
+            &:last-child{
+                margin-bottom: 0;
+            }
+             
+        }
+
+    }
+}
+
