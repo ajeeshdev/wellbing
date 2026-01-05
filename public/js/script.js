@@ -42,43 +42,52 @@
   });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  const switcher = document.getElementById('languageSwitcher');
+
+  if (!switcher) return; // element not present, stop execution
+
+  switcher.addEventListener('change', function () {
+    if (this.value === 'ar') {
+      document.documentElement.lang = 'ar';
+      document.documentElement.dir = 'rtl';
+    } else {
+      document.documentElement.lang = 'en';
+      document.documentElement.dir = 'ltr';
+    }
+  });
+});
 
 
 document.addEventListener("DOMContentLoaded", () => {
 
-    const switcher = document.getElementById('languageSwitcher');
 
-  switcher.addEventListener('change', function () {
-    if (this.value === 'ar') {
-      document.documentElement.setAttribute('lang', 'ar');
-      document.documentElement.setAttribute('dir', 'rtl');
-    } else {
-      document.documentElement.setAttribute('lang', 'en');
-      document.documentElement.setAttribute('dir', 'ltr');
-    }
-  });
-
+ 
   /* ------------------------------
     0. Banner
   ------------------------------ */
 $(document).ready(function () {
   $(".banner-text-slider-init").slick({
-    slidesToShow: 1,
+slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
     asNavFor: ".banner-slider-init",
     autoplay: true,
+    autoplaySpeed: 5000, // 5 seconds per slide
+    pauseOnHover: false, // Recommended for background banners
     fade: true,
     cssEase: "linear",
     speed: 800,
-      draggable: true,
-
-    // Enable dots and place them in your custom div
+    draggable: true,
     dots: true,
     appendDots: $(".banner-dots"),
+        lazyLoad: 'progressive',
+
+    
   });
 
   $(".banner-slider-init").slick({
+
     asNavFor: ".banner-text-slider-init",
     dots: false,
     draggable: true,
@@ -86,6 +95,7 @@ $(document).ready(function () {
     fade: true,
     cssEase: "linear",
 
+    speed: 800
   });
 });
 
@@ -101,73 +111,86 @@ $(document).ready(function () {
     });
   }
 
+
+
+
+//scroll button banner
+
+document.getElementById('scroll').addEventListener('click', () => {
+    window.scrollBy({
+        top: window.innerHeight, 
+        behavior: 'smooth'
+    });
+});
+
+
+//video section
+
+const video = document.querySelector('.video-container video');
+const playButton = document.querySelector('.playButton');
+const playButtonText = document.querySelector('.playButton p');
+const playImg = playButton.querySelector('img');
+
+playButton.addEventListener('click', () => {
+    if (video.paused) {
+        video.play();
+
+        playImg.src = "public/images/home/pause.png"; 
+        playButton.classList.add('is-playing');
+        playButtonText.innerHTML="Pause our video"
+    } else {
+        video.pause();
+        playImg.src = "public/images/home/play.png";
+        playButton.classList.remove('is-playing');
+                playButtonText.innerHTML="Play our video"
+
+    }
+});
+
+// Optional: Reset icon if video ends naturally
+video.addEventListener('ended', () => {
+    playImg.src = "public/images/home/play.png";
+    playButton.classList.remove('is-playing');
+                    playButtonText.innerHTML="Play our video"
+
+});
   /* ============================================================
      2. Slick Sliders
   ============================================================ */
-
-  // Helper: Who we are
-
-$(document).ready(function () {
-
-const slider = $('.whoWeAre-slider');
-slider.slick({
-    dots: false,
-    arrows: true,
+  $('.solutions-slider ').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 600,
+    cssEase: 'linear',
     infinite: true,
-    autoplay:true,
-    slidesToShow: 1,
-      //  fade: true,
-    cssEase: "linear",
-            prevArrow: $(".prev"),
-    nextArrow: $(".next"),
+    arrows: false,
+    dots: false,
+    pauseOnHover: false,
+    pauseOnFocus: false,
+     responsive: [
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+                
+                {
+                    breakpoint: 575,
+                    settings: {
+                        slidesToShow: 2,
+                    },
+                },
+    ],
 });
 
-
-});
-
-
-
-
-    /* --- Services Slider with Progress --- */
-  (() => {
-    const $slider = $(".expertise .expertise-slider");
-    const $track = $(".expertise .progress-track");
-    const $label = $(".expertise .progress-fill");
-
-    if ($slider.length) {
-      $slider.slick({
-        slidesToShow: 3,
-        slidesToScroll: 2,
-        infinite: true,
-        dots: false,
-        arrows: false,
-        cssEase: "linear",
-        autoplay: true,
-        autoplaySpeed: 1500,
-        variableWidth: true,
-        swipeToSlide: true,
-      });
-
-      $slider.on("beforeChange", (event, slick, currentSlide, nextSlide) => {
-        const calc = (nextSlide / (slick.slideCount - 1)) * 100;
-
-        $track
-          .css("background-size", `${calc}% 100%`)
-          .attr("aria-valuenow", calc);
-
-        $label.text(`${Math.round(calc)}% completed`);
-      });
-
-      // $(".expertise-next").on("click", () => $slider.slick("slickNext"));
-      // $(".expertise-prev").on("click", () => $slider.slick("slickPrev"));
-
-      $track.css({
-        "background-image": "linear-gradient(to right, #FFD52B 100%, #D9D9D9 100%)",
-        "background-size": "0% 100%",
-        "background-repeat": "no-repeat",
-      });
-    }
-  })();
 
   /* ============================================================
      4. Equal Height Utility

@@ -1,7 +1,525 @@
-.banner{
-    h1{
+.banner {
+    /* 1. Initial State: Hide the content and move it down slightly */
+
+
+    @keyframes zoomInBg {
+        from {
+            transform: scale(1);
+        }
+
+        to {
+            transform: scale(1.1);
+        }
+    }
+
+    h1 {
         font-weight: 700;
-        font-size: 220px;
+    }
+
+    h1,
+    h1 span {
+        color: #fff;
+        white-space: pre-line;
+        font-size: clamp(58px, 11.469vw, 220px);
+        line-height: clamp(60px, 11.469vw, 190px);
 
     }
+
+    picture {
+        position: relative;
+
+        &::before,
+        &::after {
+            @extend .position;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        &:before {
+            background: rgba(0, 0, 0, 0.44);
+            left: 0;
+            top: 0;
+            z-index: 1;
+        }
+
+        &::after {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="895" height="668" viewBox="0 0 895 668" fill="none"><path d="M1002 0L800.767 575.326C791.313 602.599 774.302 624.866 749.828 642.126C725.323 659.386 698.61 668 669.659 668C640.706 668 613.309 659.945 589.084 643.774C564.859 627.634 547.196 605.927 536.063 578.653C528.257 556.387 516.564 522.707 500.984 477.614C493.739 499.321 482.326 531.881 466.746 575.295C441.681 637.088 397.989 667.969 335.638 667.969C306.686 667.969 279.538 659.634 254.224 642.903C228.879 626.203 211.496 604.776 202.042 578.622L0 0H225.459L388.286 465.112L442.552 310.645L333.99 0H559.51L722.4 465.485L885.228 0H1002Z" fill="white" fill-opacity="0.18"/></svg>');
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-size: 46.6%;
+            right: 0;
+            top: 0;
+            z-index: 2;
+            opacity: 0;
+            transform: translateX(100px) scale(1.1);
+            /* Starts off-screen to the right */
+            transition: all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+
+            @include max(767) {
+                height: 360px;
+                object-fit: cover;
+
+            }
+        }
+    }
+
+    .banner-text-container {
+        position: absolute;
+        left: 50%;
+        bottom: 18.1%;
+        transform: translateX(-50%);
+    }
+
+    .scroll {
+        z-index: 1;
+        background-color: unset;
+        background-image: url(../images/scroll.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        padding-top: 7px;
+        bottom: -25px;
+        width: 100px;
+
+        @include min(768) {
+            bottom: -27px;
+            width: 140.375px;
+            padding-top: 16px;
+        }
+
+        @include min(992) {
+            bottom: -25px;
+        }
+
+        @include min(1200) {
+            bottom: -29px;
+        }
+
+        @include min(1350) {
+            bottom: -30px;
+        }
+
+        @include min(1440) {
+            bottom: -32px;
+        }
+
+        @include min(1600) {
+            bottom: -33px;
+        }
+
+        @include min(1900) {
+            bottom: -36px;
+        }
+
+        svg {
+            margin-bottom: 6px;
+            width: 13px;
+
+            @include min(768) {
+                margin-bottom: 8px;
+                width: 15px;
+            }
+
+            @include min(992) {
+                margin-bottom: 12px;
+                width: 18px;
+            }
+        }
+
+        div {
+            color: $primaryColor;
+        }
+    }
+
+    .banner-text h1 {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+    }
+
+    picture.slick-active::after {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+
+    .banner-text h1 span {
+        display: inline-block;
+        opacity: 0;
+        transform: scale(0.8);
+        transition: all 0.6s ease-out 0.4s;
+        /* Added 0.4s delay for the span */
+    }
+
+    /* 2. Active State: When Slick adds the .slick-active class */
+    .slick-active.banner-text h1 {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .slick-active.banner-text h1 span {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    /* Optional: Add a zoom effect to the background images */
+    .banner-slider-init .slick-active img {
+        animation: zoomInBg 8s forwards;
+    }
+
+    /* The Animation */
+    .mouse-wheel {
+        animation: scroll-move 2s infinite;
+    }
+
+    @keyframes scroll-move {
+        0% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        50% {
+            transform: translateY(5px);
+            opacity: 0.5;
+        }
+
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+    .banner-dots{
+        position: absolute;
+        bottom: 23px;
+        right: 0;
+        ul{
+            gap: 8px;
+        }
+        button{
+                transition: 0.5s ease all;
+
+            background: #FFF;
+            font-size: 0;
+            border-radius: 20px;
+            width: 20px;
+            height: 20px;
+        }
+        .slick-active{
+            button{
+                transition: 0.5s ease all;
+                background: $primaryColor;
+                width: 51px;
+
+            }
+        }
+    }
+}
+
+
+.home-about {
+    background: #F5F8FA;
+
+
+    &:before {
+        @extend .position;
+        left: 0;
+        top: 0;
+        width: 34.692%;
+        height: 100%;
+        background: url(../images/vector/about.png);
+        background-repeat: no-repeat;
+    }
+
+    .playButton {
+        margin-left: auto;
+        background: unset;
+        display: flex;
+        align-items: end;
+        gap: 6px;
+        margin-top: -23px;
+        @include min(992){margin-top: -26px;   gap: 13px;}
+        @include min(1200){margin-top: -28px;   gap: 10px;}
+        @include min(1350){margin-top: -38px;   gap: 12px;}
+        @include min(1440){margin-top: -42px;   gap: 14px;}
+        @include min(1600){margin-top: -46px;   gap: 16px;}
+        @include min(1900){margin-top: -50px;   gap: 18px;}
+        img{
+            width: 100%;
+            height: auto;
+        }
+        span {
+            width: clamp(60px, 6.808vw, 100px);
+            height: clamp(60px, 6.808vw, 100px);
+            position: relative;
+
+            &::before {
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                animation: 2s linear infinite animateIPlay2;
+                box-shadow: 0 0 6px rgba(0, 0, 0, .2);
+                border-radius: 100%;
+                transition: .3s;
+                -webkit-transition: .3s;
+                -o-transition: .3s;
+                -moz-transition: .3s
+            }
+
+
+        }
+
+        &.is-playing {
+            span::before {
+                animation: none;
+            }
+        }
+
+        p {
+            color: #000;
+            padding-bottom: 5px;
+            @include min(992){padding-bottom: 8px;}
+            @include min(1200){padding-bottom: 11px;}
+            @include min(1440){padding-bottom: 12px;}
+            @include min(1600){padding-bottom: 14px;}
+            @include min(1900){padding-bottom: 16px;}
+        }
+    }
+
+    .video-container {
+        position: relative;
+
+        &::after {
+            @extend .position;
+            width: 100%;
+            height: 100%;
+            background: url(../images/home/overlay.png);
+         background-size: 100% 100%;
+            left: 0;
+            top: 0;
+            background-repeat: no-repeat;
+        }
+
+    }
+
+    .video-wrapper {
+        width:100%;
+        @include min(992){
+            width: 53.393%;
+
+        }
+
+        button {}
+
+        video {
+            display: block;
+            width: 100%;
+            object-fit: cover;
+            object-position: 0px 65.2%;
+            height: clamp(150px, 19.4799vw, 290px);
+            @include min(992){
+                height: clamp(180px, 19.4799vw, 374px);
+
+            }
+        }
+
+
+    }
+
+    .company {
+        background-color: #20232B;
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="294" height="193" viewBox="0 0 294 193" fill="none"><path opacity="0.3" d="M96.1738 0.5L165.771 199.3L166.241 200.646L166.714 199.301L189.947 133.166L190.006 133.001L189.948 132.836L143.7 0.5H239.196L308.819 199.46L309.291 200.809L309.763 199.46L379.359 0.5H428.296L342.371 246.157V246.158C338.359 257.732 331.143 267.182 320.746 274.514C310.336 281.846 298.999 285.5 286.71 285.5C274.795 285.5 263.506 282.29 253.459 275.846L252.49 275.212C242.205 268.359 234.707 259.147 229.978 247.563C226.636 238.031 221.632 223.618 214.966 204.324L214.485 202.933L214.02 204.329C210.919 213.617 206.033 227.553 199.363 246.14C194.025 259.291 186.721 269.118 177.466 275.66C168.209 282.203 156.963 285.486 143.701 285.486C131.408 285.486 119.88 281.95 109.12 274.838H109.119C98.3495 267.742 90.9802 258.65 86.9727 247.563L0.704102 0.5H96.1738Z" stroke="white" stroke-opacity="0.45"/></svg>');
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        background-size: 45%;
+        padding: clamp(25px, 2.605vw, 50px);
+        @include min(992){
+            width: 38.8698%;
+            
+        }
+            &::after {
+        @extend .position;
+        background: $primaryColor;
+        opacity: 0.2;
+        width: 60.4%;
+        height: 1px;
+        bottom: 0;
+        left: -7%;
+        }
+
+
+        h2 {
+            line-height: 100%;
+            color: #fff;
+            margin-bottom: clamp(8px, 0.94vw, 18px);
+            font-size: clamp(20px, 1.9vw, 36px);
+
+        }
+
+        p {
+            color: #C9C9C9;
+
+
+        }
+
+        div {
+            border-bottom: 1px solid #C9C9C9;
+            ;
+            padding-bottom: clamp(35px, 3.855vw, 74px);
+            margin-bottom: clamp(22px, 2.292vw, 44px);
+        }
+
+       a{
+        @extend .read-more;
+                    color: #FFF;
+       }
+
+    }
+
+    .counter {
+        margin-top: 15px;
+        @include min(992){
+        margin-top: 5px;
+
+        }
+        div {
+            height: fit-content;
+            margin-left:clamp(20px, 1.93vw, 37px);
+            margin-top: clamp(6px, 1.407vw, 27px);
+            padding-left: clamp(12px, 1.407vw, 18px);
+            // border-left: 2px solid #EF4136;
+            position: relative;
+
+            &::before {
+                @extend .position;
+                width: 2px;
+                height: 100%;
+                background-color: $primaryColor;
+                left: 0;
+                border-radius: 10px;
+            }
+
+            p {
+                line-height: 100%;
+                color: #000;
+                margin-bottom: 6px;
+            }
+
+            span {
+                font-weight: 500;
+                color: #000;
+                line-height: 83.333%;
+                font-size: clamp(16px, 1.25vw, 24px);
+
+            }
+        }
+
+        strong,
+        span {
+            display: inline-block;
+            color: #000;
+            font-weight: 700;
+            line-height: 100%;
+            font-size: clamp(60px, 6.67vw, 128px);
+
+
+        }
+    }
+}
+
+@keyframes animateIPlay2 {
+    0% {
+        box-shadow: 0 0 #ef423662;
+    }
+
+    40%,
+    80% {
+        box-shadow: 0 0 0 15px rgba(255, 255, 255, 0)
+    }
+
+    100% {
+        box-shadow: 0 0 0 rgba(255, 255, 255, 0)
+    }
+}
+
+
+
+.solutions{
+    h2{
+        color: #000;
+    }
+    h3{
+        line-height: 100%;
+        margin-bottom: 16px
+    }
+    a{
+        @extend .read-more;
+    }
+    &-slider-item{
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="199" height="133" viewBox="0 0 199 133" fill="none"><path opacity="0.1" d="M50.2725 0.5L86.7178 104.606L87.1895 105.952L87.6621 104.607L99.8467 69.9209L99.9053 69.7559L99.8477 69.5908L75.7021 0.5H125.284L161.744 104.69L162.216 106.039L162.688 104.69L199.134 0.5H224.296L179.341 129.024V129.026C177.319 134.859 173.733 139.655 168.589 143.42L168.087 143.781C162.666 147.6 156.766 149.5 150.372 149.5C143.967 149.5 137.912 147.719 132.557 144.145V144.144L132.059 143.806C126.961 140.277 123.225 135.597 120.839 129.757C119.087 124.758 116.464 117.2 112.969 107.085L112.488 105.694L112.022 107.09C110.398 111.955 107.839 119.257 104.345 128.995C101.558 135.866 97.7504 140.982 92.9395 144.383C88.1308 147.782 82.2827 149.493 75.3682 149.493C68.9695 149.493 62.9684 147.653 57.3623 143.947H57.3613C51.7516 140.251 47.9217 135.522 45.8389 129.76L0.704102 0.5H50.2725Z" fill="white" stroke="%23EF4136"/></svg>');
+        background-repeat: no-repeat;
+        background-position: bottom right;
+        border: 1px solid #EEE;
+        padding: 40px;
+        
+    }
+}
+
+
+
+
+
+
+
+
+html[dir="rtl"]{
+    .banner,.slick-slider{
+        direction: ltr;
+    }
+    .banner-text {
+        text-align: right;
+    }
+    .banner .banner-dots{
+        right: unset;
+        left: 0;
+    }
+    .home-about .company a{
+                    padding-right: 0;
+                    padding-left: 33px;
+            @include min(992){padding-left: 38px;}
+            @include min(1200){padding-left: 42px;}
+
+            &::after {
+                right: unset;
+                left: 0;
+
+            }
+    }
+    .home-about .counter div{
+        margin-left: 0;
+        padding-left: 0;
+               margin-right:clamp(20px, 1.93vw, 37px);
+            margin-top: clamp(6px, 1.407vw, 27px);
+            padding-right: clamp(12px, 1.407vw, 18px);
+            &::before{
+                left: unset;
+                right: 0;
+            }
+    }
+    .home-about .company{
+        background-position: bottom left;
+    }
+    .home-about .playButton{
+        margin-left: unset;
+        margin-right: auto;
+    }
+
 }

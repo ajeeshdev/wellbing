@@ -1,159 +1,353 @@
-header{
-    position: fixed;
-    left: 0;
-    top: 50px;
-    width: 100%;
-    z-index: 22;
-    button{
-        gap: 12px;
-    }
-    .container-ctn{
-        border-radius: 100px;
-        padding: 0px 32px;
-        background: #FFF;
-
-    }
-    .header-left{
-        width: 394px;
-        button{
-            padding: 39.5px 30px;
-            margin-left: 30px;
-            border-left: 1px solid #EEEEEE;
-            border-right: 1px solid #EEEEEE;
-        }
-    }
-    .header-right{
-        width: 794px;
-                justify-content: flex-end;
-.language-switcher {
-  position: relative;
-  display: inline-block;
-  font-family: inherit;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-
-.lang-btn {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: #f2f2f2;
-  border: none;
-  cursor: pointer;
-}
-
-.lang-btn .chevron {
-  font-size: 12px;
-}
-
-.lang-menu {
-  position: absolute;
-  top: 110%;
+header {
+  position: fixed;
   left: 0;
-  min-width: 140px;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-  list-style: none;
-  padding: 6px 0;
-  margin: 0;
-  display: none;
-  z-index: 1000;
-}
+  top: 15px;
+  width: 100%;
+  z-index: 22;
+  @include min(768){  top: 25px;}
+  @include min(992){  top: 30px;}
+  @include min(1200){  top: 50px;}
+  .navbar-toggler {
+    svg {
+      height: auto;
+      width: 18px;
+      @include min(768){
+        width: clamp(14px, 1.52vw, 29px);
 
-.lang-menu li {
-  padding: 10px 16px;
-  cursor: pointer;
-  white-space: nowrap;
-}
+      }
+    }
+  }
 
-.lang-menu li:hover {
-  background: #0d6efd;
-  color: #fff;
-}
-
-/* show menu */
-.language-switcher.open .lang-menu {
-  display: block;
-}
-
-         
-                select{
-                    line-height: normal;
-
-                    padding-right: 48px;
-                        background-position: 78%;
-                }
-
-                a{
-                    color: $primaryColor;
-                    display: flex;
-                    align-items: center;
-                    gap: 8px;
-                    +a{
-                        margin-left: 30px;
-                    }
-                }
+  button {
+    @include min(768){
+      gap: 12px;
 
     }
+    @include max (767){
+      font-size: 0;
+    }
+  }
+
+  .container-ctn {
+    border-radius: 100px;
+    background: #FFF;
+    padding: 11px 22px;
+
+    @include min(768) {
+      padding: 0px 22px;
+    }
+
+    @include min(992) {
+      padding: 0px 18px;
+    }
+
+    @include min(1200) {
+      padding: 0px 20px;
+    }
+
+    @include min(1350) {
+      padding: 0px 23px;
+    }
+
+    @include min(1440) {
+      padding: 0px 26px;
+    }
+
+    @include min(1600) {
+      padding: 0px 29px;
+    }
+
+    @include min(1900) {
+      padding: 0px 32px;
+    }
+
+  }
+
+  .header-left {
+    width: 33%;
+    @include min(768)
+    {
+  width: 37.382%;
+
 }
-.mobDropDown {
- position: relative;
- // &:hover{
- //  .dropdown-menu{
- //   display: block;
- //   transition: 0.5s ease all;
- //  }
- // }
+    @include min(992) {
+      width: 24.382%;
 
- button {
-  background: unset;
-  &:focus-visible{
-   border: unset;
-   overflow: unset;
-  }
-
-  svg {
-   height: auto;
-   width:  clamp(15px, 1.3vw, 24px);
-   transform: rotate(0deg);
-   transition: transform 0.5s ease;
-  }
-
-  &.show {
-   svg {
-    transition: transform 0.5s ease;
-    transform: rotate(180deg);
-   }
-
-  }
- }
-
- .dropdown-menu {
-  position: unset !important;
-  transform: translate(0) !important;
-  border: unset;
-  padding-top: 15px;
-  padding-left: 15px;
-  
-  background: unset;
-
-
-  li {
-
-
-   &:hover {
-    background: $white;
+    }
 
     a {
-     color: $primaryColor;
+      width: 150px;
 
+      @include min(992) {
+        width: 45.689%;
+      }
+
+      img {
+        width: 100%;
+        height: auto;
+      }
     }
-   }
+    button {
+      @include max(767){
+        display: none;
+      }
+    }
+
+    button {
+      border-left: 1px solid #EEEEEE;
+      border-right: 1px solid #EEEEEE;
+      margin-left: clamp(15px, 1.563vw, 30px);
+      padding: 15px 10px;
+
+      @include min(768) {
+        padding: 22.5px 18px;
+      }
+
+      @include min(992) {
+        padding: 26.5px 20px;
+      }
+
+      @include min(1200) {
+        padding: 28.5px 22px;
+      }
+
+      @include min(1350) {
+        padding: 30.5px 24px;
+      }
+
+      @include min(1440) {
+        padding: 33.5px 26px;
+      }
+
+      @include min(1600) {
+        padding: 36.5px 28px;
+      }
+
+      @include min(1900) {
+        padding: 39.5px 29px;
+      }
+    }
+  }
+
+  .header-right {
+    // width: 51%;
+    justify-content: flex-end;
+
+    .language-switcher {
+      position: relative;
+      display: inline-block;
+      font-family: inherit;
+      margin-left: 7px;
+      margin-right: 7px;
+      @include min(768){
+        margin-right: clamp(15px, 1.563vw, 30px);
+        margin-left: clamp(15px, 1.563vw, 30px);
+        
+      }
+    }
+
+    .lang-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      background: #f2f2f2;
+      border: none;
+      cursor: pointer;
+      padding: 6px 8px;
+      // .current-lang{
+      //   @include max(767){
+      //     font-size: 0;
+      //   }
+      // }
+
+      @include min(992) {
+        padding: 4px 8px;
+      }
+
+      @include min(1200) {
+        padding: 8px 10px;
+      }
+
+      @include min(1350) {
+        padding: 8.5px 11px;
+      }
+
+      @include min(1440) {
+        padding: 9px 12px;
+      }
+
+      @include min(1600) {
+        padding: 9.5px 13px;
+      }
+
+      @include min(1900) {
+        padding: 10px 14px;
+      }
+
+      svg {
+        width: clamp(16px, 1.25vw, 24px);
+      }
+    }
+
+    .lang-btn .chevron {
+      font-size: 12px;
+    }
+
+    .lang-menu {
+      position: absolute;
+      top: 110%;
+      left: 0;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      list-style: none;
+      padding: 6px 0;
+      margin: 0;
+      display: none;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .lang-menu li {
+      padding: 10px 16px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .lang-menu li:hover {
+      background: #0d6efd;
+      color: #fff;
+    }
+
+    /* show menu */
+    .language-switcher.open .lang-menu {
+      display: block;
+    }
+
+
+    select {
+      line-height: normal;
+
+      padding-right: 48px;
+      background-position: 78%;
+    }
+
+    a {
+      color: $primaryColor;
+      display: flex;
+      align-items: center;
+
+      @include max(991){
+        border: 1px solid $primaryColor;
+        padding: 5px;
+        border-radius: 50%;
+      }
+      @include max(767){
+        &:first-child{
+         display: none; 
+        }
+      }
+      @include min(992){
+        gap: 8px;
+      }
+      @include max(767){
+        &:first-child{
+          // display: none;
+        }
+      }
+
+      +a {
+        margin-left: 10px;
+        @include min(992){
+          margin-left: clamp(15px, 1.563vw, 30px);
+
+        }
+      }
+
+      @include max(991) {
+        font-size: 0;
+      }
+    }
 
   }
- }
 }
 
+.mobDropDown {
+  position: relative;
+  // &:hover{
+  //  .dropdown-menu{
+  //   display: block;
+  //   transition: 0.5s ease all;
+  //  }
+  // }
+
+  button {
+    background: unset;
+
+    &:focus-visible {
+      border: unset;
+      overflow: unset;
+    }
+
+    svg {
+      height: auto;
+      width: clamp(15px, 1.3vw, 24px);
+      transform: rotate(0deg);
+      transition: transform 0.5s ease;
+    }
+
+    &.show {
+      svg {
+        transition: transform 0.5s ease;
+        transform: rotate(180deg);
+      }
+
+    }
+  }
+
+  .dropdown-menu {
+    position: unset !important;
+    transform: translate(0) !important;
+    border: unset;
+    padding-top: 15px;
+    padding-left: 15px;
+
+    background: unset;
+
+
+    li {
+
+
+      &:hover {
+        background: $white;
+
+        a {
+          color: $primaryColor;
+
+        }
+      }
+
+    }
+  }
+}
+
+html[dir="rtl"]{
+  header .header-left button{
+
+    margin-left: 0;
+          margin-right: clamp(15px, 1.563vw, 30px);
+  }
+  header .header-right a +a{
+       margin-right: 10px;
+  }
+  @include min(992){
+        header .header-right a + a {
+        margin-left: 0;
+        margin-right: clamp(15px, 1.563vw, 30px);
+    }
+ 
+
+  }
+
+}
