@@ -1,0 +1,143 @@
+footer{
+    background: #171616;
+    border-top: 10px solid $primaryColor;
+    @extend .commonPadding-pt; 
+
+    .brand{
+        width: 316px;
+        p{
+            color: #C9C9C9;
+        }
+    }
+    .primary-links{
+        width: 335px;
+        ul{
+            column-count: 2;
+        }
+    }
+    .title{
+        color: #ffff;
+        line-height: 100%;
+        font-size: 36px;
+
+    }
+    .quick-links{
+         .title{
+            margin-bottom: 1rem;
+         }
+        a{
+          color: #BFBFBF;
+            font-weight: 400;
+        }
+    }
+    .footer-row-one{
+        border-bottom: 1px solid #EEEEEE;
+        padding-bottom: 40px;
+    }
+    .footer-row-two{
+        border-bottom: 1px solid #EEEEEE;
+        ul{
+            gap: 62px;
+            margin-top: 31px;
+        }
+    }
+}
+.newsletter{
+
+        padding-top: 62px ;
+        padding-bottom: 62px ;
+        padding-left: 183px ;
+        border-left:1px solid #EEEEEE; 
+        .title{
+            margin-bottom: 1rem;
+        }
+
+        form{
+            display: flex;
+            align-items: center;
+            height: 54px;
+            position: relative;
+            border: 1px solid #EF4136;
+            background: #171616;
+            margin-bottom: 27px;
+        }
+        input{
+            &::placeholder{
+                color: #BFBFBF;
+
+            }
+            color: #BFBFBF;
+            background: unset;
+            width: 100%;
+            padding-left: 51px;
+            height: 100%;
+            &:focus{
+                ~ svg{
+                    path{
+                     fill: $primaryColor;
+                    }
+                }
+            }
+
+        }
+          .formGroup{
+            &:focus-within{
+                path{
+                    fill: $primaryColor;
+                    transition: 0.5s ease all;
+                }
+            }
+            width: 100%;
+            svg,button{
+                   top: 50%;
+             transform: translateY(-50%);
+        }
+          }
+        .formGroup svg{
+             position: absolute;
+             left: 20px;
+             path{
+                            transition: 0.5s ease all;
+             }
+      
+         }
+         button{
+            overflow: hidden;
+                transition: 0.5s ease all;
+            position: absolute;
+            background-color: $primaryColor;
+            color: #FFF;
+            line-height: 100%;
+            gap: 13px;
+            right: 6px;
+            padding: 9px 12px;
+            svg{transition: 0.8s ease all;}
+            &:hover{
+                background: #000;
+                svg{
+                    transition: 0.3s ease all;
+                    transform:rotate(180deg);
+                }
+            }
+         }
+
+         p{
+            color: #BFBFBF;
+
+
+            a{
+                color: $primaryColor;
+                text-decoration: underline;
+
+            }
+         }
+    
+}
+
+.copyright{
+    padding: 36px 0px;
+    p,a{
+        color: #BFBFBF;
+        line-height:  100% ;
+    }
+}

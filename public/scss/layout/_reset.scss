@@ -53,7 +53,10 @@ body {
     max-width: 87.8662%;
   }
 }
-
+.container-side {
+    max-width: 94%;
+    margin-left: auto;
+}
 
 ul {
   padding: 0;
@@ -103,13 +106,101 @@ a {
   }
 
   @include min(1600) {
-    padding-top: 86px;
-    padding-bottom: 86px;
+    padding-top: 90px;
+    padding-bottom: 90px;
   }
 
   @include min(1900) {
+    padding-top:100px;
+    padding-bottom: 100px;
+  }
+}
+.commonPadding-pt {
+  padding-top: 50px;
+
+  @include min(992) {
+    padding-top: 70px;
+  }
+
+  @include min(1200) {
+    padding-top: 74px;
+  }
+
+  @include min(1280) {
+    padding-top: 78px;
+  }
+
+  @include min(1440) {
+    padding-top: 82px;
+  }
+
+  @include min(1600) {
+    padding-top: 86px;
+  }
+
+  @include min(1900) {
+    padding-top: 100px;
+  }
+}
+.commonPadding-pb-120 {
+  padding-bottom: 60px;
+
+  @include min(992) {
+    padding-bottom: 70px;
+  }
+
+  @include min(1200) {
+    padding-bottom: 80px;
+  }
+
+  @include min(1280) {
+    padding-bottom: 90px;
+  }
+
+  @include min(1440) {
+    padding-bottom: 100px;
+  }
+
+  @include min(1600) {
+    padding-bottom: 110px;
+  }
+
+  @include min(1900) {
+    padding-bottom: 120px;
+  }
+}
+.commonPadding-120 {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @include min(992) {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  @include min(1200) {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+
+  @include min(1280) {
     padding-top: 90px;
     padding-bottom: 90px;
+  }
+
+  @include min(1440) {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+
+  @include min(1600) {
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+
+  @include min(1900) {
+    padding-top: 120px;
+    padding-bottom: 120px;
   }
 }
 .commonMargin  {
@@ -859,12 +950,12 @@ input[type=number] {
             padding-right: 33px;
             @include min(992){padding-right: 38px;}
             @include min(1200){padding-right: 42px;}
-            font-size: clamp(15px, 0.94vw, 18px);
+            font-size: clamp(13px, 0.94vw, 18px);
 
             &::after {
                 @extend .position;
-                width: clamp(25px, 1.563vw, 30px);
-                height: clamp(25px, 1.563vw, 30px);
+                width: clamp(20px, 1.563vw, 30px);
+                height: clamp(20px, 1.563vw, 30px);
                 background: url('data:image/svg+xml,<svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="15" cy="15" r="14.5" stroke="%23EF4136" stroke-dasharray="2 2"/><path fill-rule="evenodd" clip-rule="evenodd" d="M8.25066 14.9992C8.25066 15.1981 8.32968 15.3889 8.47033 15.5295C8.61098 15.6702 8.80175 15.7492 9.00066 15.7492H19.1907L16.4707 18.4692C16.3382 18.6114 16.2661 18.7994 16.2695 18.9937C16.2729 19.188 16.3516 19.3734 16.489 19.5108C16.6265 19.6482 16.8118 19.7269 17.0061 19.7304C17.2004 19.7338 17.3885 19.6617 17.5307 19.5292L21.5307 15.5292C21.6711 15.3886 21.75 15.1979 21.75 14.9992C21.75 14.8004 21.6711 14.6098 21.5307 14.4692L17.5307 10.4692C17.3885 10.3367 17.2004 10.2646 17.0061 10.268C16.8118 10.2714 16.6265 10.3501 16.489 10.4876C16.3516 10.625 16.2729 10.8104 16.2695 11.0047C16.2661 11.199 16.3382 11.387 16.4707 11.5292L19.1907 14.2492H9.00066C8.80175 14.2492 8.61098 14.3282 8.47033 14.4688C8.32968 14.6095 8.25066 14.8003 8.25066 14.9992Z" fill="%23EF4136"/></svg>');
                 background-size: cover;
                 background-repeat: no-repeat;
@@ -877,10 +968,68 @@ input[type=number] {
 
             }
             &:hover{
+              color: $primaryColor;
                 &::after{
+                  
                   background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30" fill="none"><circle cx="15" cy="15" r="6.5" fill="%23EF4136" stroke="%23EF4136" stroke-dasharray="2 2"/><circle cx="15" cy="15" r="14.5" stroke="%23EF4136" stroke-dasharray="2 2"/></svg>');
+                              background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center right;
                   transition: 0.5s ease all;
                         transform: translateY(-50%) rotate(180deg);
                 }
             }
         }
+
+             .slick-dots{
+            gap: clamp(4px, 2.1vw, 8px);
+            button{
+                    transition: 0.5s ease all;
+    
+                background: #FFF;
+                font-size: 0;
+                border-radius: 20px;
+                width: clamp(10px, 1.0999vw, 20px);
+                height: clamp(10px, 1.0999vw, 20px);
+
+            }
+            .slick-active{
+                button{
+                    transition: 0.5s ease all;
+                    background: $primaryColor;
+                    width: clamp(25px, 2.69vw, 51px);
+    
+                }
+            }
+        }
+
+
+
+           .slick-nav-count{
+        border: 2px solid #D9D9D9;
+        width: fit-content;
+        gap: clamp(10px, 0.94vw, 18px);
+        padding: 9px 4px;
+        @include min(576){padding: 14px 8px;}
+        @include min(768){padding: 16px 10px;}
+        @include min(992){padding: 16.5px 10.5px;         border: 4px solid #D9D9D9;}
+        @include min(1200){padding: 17px 11px;}
+        @include min(1350){padding: 17.5px 11.5px;}
+        @include min(1440){padding: 18px 12px;}
+        @include min(1600){padding: 18.5px 12.5px;}
+        @include min(1900){padding: 19px 13px;}
+        div{
+            &:hover{
+                path{
+                    fill: #737374;
+                }
+            }
+        }
+        .slick-count{
+            padding-top: 4px;
+            line-height: 100%;
+            font-weight: 700;
+            color: $primaryColor;
+            width: 22px;
+        }
+    }

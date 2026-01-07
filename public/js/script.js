@@ -157,39 +157,214 @@ video.addEventListener('ended', () => {
   /* ============================================================
      2. Slick Sliders
   ============================================================ */
-  $('.solutions-slider ').slick({
-    slidesToShow: 2,
+$(document).ready(function () {
+
+    function initSlider(sliderSelector, counterSelector, options) {
+        var $slider = $(sliderSelector);
+        var $counter = $(counterSelector);
+
+        if (!$slider.length) return;
+
+        function formatNumber(num) {
+            return (num < 10 ? '0' : '') + num;
+        }
+
+        $slider.on('init', function (event, slick) {
+            $counter.text(formatNumber(1));
+        });
+
+        $slider.slick(options);
+
+        $slider.on('afterChange', function (event, slick, currentSlide) {
+            $counter.text(formatNumber(currentSlide + 1));
+        });
+    }
+
+    // Solutions slider
+    initSlider('.solutions-slider', '.solutions .slick-count', {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        infinite: true,
+        dots: false,
+                arrows:true,
+
+        prevArrow: $('.solutions .prev'),
+        nextArrow: $('.solutions .next'),
+        responsive: [
+            {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
+    // Blog slider
+    initSlider('.blog-slider', '.blog .slick-count', {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        variableWidth: true,
+        infinite: true,
+        dots: false,
+        arrows:true,
+        prevArrow: $('.blog .prev'),
+        nextArrow: $('.blog .next'),
+        responsive: [
+            {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+    initSlider('.testimonial-slider', '.testimonial .slick-count', {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: false,
+        variableWidth: true,
+        infinite: true,
+        dots: false,
+        arrows:true,
+        prevArrow: $('.testimonial .prev'),
+        nextArrow: $('.testimonial .next'),
+        responsive: [
+            {
+                breakpoint: 575,
+                settings: {
+                    slidesToShow: 1
+                }
+            }
+        ]
+    });
+
+});
+
+
+
+
+
+ $('.clients-slider').slick({
+    slidesToShow:6,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 600,
+    // autoplaySpeed: 0,
+    // speed: 6000,
     cssEase: 'linear',
     infinite: true,
     arrows: false,
-    dots: false,
+    dots: true,
     pauseOnHover: false,
     pauseOnFocus: false,
+        appendDots: $(".clients-dots"),
      responsive: [
       {
-        breakpoint: 767,
+        breakpoint: 1199,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 5,
         },
       },
       {
         breakpoint: 991,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 4,
         },
       },
+                
+            
+      
                 
                 {
                     breakpoint: 575,
                     settings: {
-                        slidesToShow: 2,
+                        slidesToShow: 3,
                     },
                 },
     ],
 });
+
+ $('.product-slider').slick({
+    slidesToShow:4,
+    slidesToScroll: 1,
+    autoplay: true,
+    variableWidth:true,
+    cssEase: 'linear',
+    infinite: true,
+    arrows: false,
+    dots: true,
+    pauseOnHover: false,
+    pauseOnFocus: false,
+        appendDots: $(".product-dots"),
+
+});
+
+$(document).ready(function() {
+    function initServicesSlider() {
+        var $slider = $('.services-loop');
+        var breakpoint = 767;
+        var windowWidth = $(window).width();
+
+        if (windowWidth <= breakpoint) {
+            if (!$slider.hasClass('slick-initialized')) {
+                $slider.slick({
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    dots: true,
+                    arrows: false,
+                    autoplay: true,
+                    infinite: true
+                });
+            }
+        } else {
+            if ($slider.hasClass('slick-initialized')) {
+                $slider.slick('unslick');
+            }
+        }
+    }
+
+    // Run on load
+    initServicesSlider();
+
+    // Run on resize
+    $(window).resize(function() {
+        initServicesSlider();
+    });
+});
+
+
+ $('.stories-slider').slick({
+    slidesToShow:3,
+    slidesToScroll: 1,
+    autoplay: true,
+    // autoplaySpeed: 0,
+    // speed: 6000,
+    variableWidth:true,
+    cssEase: 'linear',
+    infinite: true,
+    arrows: false,
+    dots: true,
+    pauseOnHover: false,
+    pauseOnFocus: false,
+        appendDots: $(".stories-dots"),
+     responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 1,
+        },
+      }
+    ],
+});
+
 
 
   /* ============================================================
@@ -211,7 +386,7 @@ video.addEventListener('ended', () => {
   };
 
   const equalHeightTargets = [
-    ".expertise-slider-item h3, .service-card",
+    ".bljhog, .service-card",
   ];
 
   window.addEventListener("load", () => {
@@ -231,331 +406,15 @@ video.addEventListener('ended', () => {
      4.Brands
   ============================================================ */
 
-  $('.brands .row-1').slick({
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0,
-    speed: 6000,
-    cssEase: 'linear',
-    infinite: true,
-    arrows: false,
-    dots: false,
-    pauseOnHover: false,
-    pauseOnFocus: false,
-     responsive: [
-      {
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 991,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-                
-                {
-                    breakpoint: 575,
-                    settings: {
-                        slidesToShow: 2,
-                    },
-                },
-    ],
-});
-
-$('.brands .row-2').slick({
-    slidesToShow: 5,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 0,
-    speed: 6000,
-    cssEase: 'linear',
-    infinite: true,
-    arrows: false,
-    dots: false,
-    pauseOnHover: false,
-      pauseOnFocus: false,
-     responsive: [
-      {
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-      {
-        breakpoint: 991,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-                
-                {
-                    breakpoint: 575,
-                    settings: {
-                        slidesToShow: 2,
-                    },
-                },
-    ],
-    // rtl: true   
-});
+ 
 
 
 
 
   
-  /* ============================================================
-    Awards
-  ============================================================ */
-
-(() => {
-    const $slider = $(".awards-slider");
-    const $track = $(".awards .progress-track");
-    const $label = $(".awards .progress-fill");
-
-    if ($slider.length) {
-      $slider.slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        infinite: true,
-        loop:true,
-        dots: false,
-        arrows: false,
-        cssEase: "linear",
-        centerMode:true,
-            centerPadding: '0px',
-      //  fade: true,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        variableWidth: true,
-        swipeToSlide: true,
-      });
-
-      $slider.on("beforeChange", (event, slick, currentSlide, nextSlide) => {
-        const calc = (nextSlide / (slick.slideCount - 1)) * 100;
-
-        $track
-          .css("background-size", `${calc}% 100%`)
-          .attr("aria-valuenow", calc);
-
-        $label.text(`${Math.round(calc)}% completed`);
-      });
-
-      // $(".expertise-next").on("click", () => $slider.slick("slickNext"));
-      // $(".expertise-prev").on("click", () => $slider.slick("slickPrev"));
-
-      $track.css({
-        "background-image": "linear-gradient(to right, #FFD52B 100%, #D9D9D9 100%)",
-        "background-size": "0% 100%",
-        "background-repeat": "no-repeat",
-      });
-    }
-  })();
-  /* ============================================================
-    products
-  ============================================================ */
-
-(() => {
-    const $slider = $(".our-product-slider");
-    const $track = $(".our-product .progress-track");
-    const $label = $(".our-product .progress-fill");
-
-    if ($slider.length) {
-      $slider.slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: true,
-        // loop:true,
-        dots: false,
-        arrows: false,
-        cssEase: "linear",
-        autoplay: true,
-        autoplaySpeed: 1500,
-        swipeToSlide: true,
-           responsive: [
-
-      {
-        breakpoint: 991,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-                
-                {
-                    breakpoint: 575,
-                    settings: {
-                        slidesToShow: 1,
-                    },
-                },
-    ],
-      });
-
-      $slider.on("beforeChange", (event, slick, currentSlide, nextSlide) => {
-        const calc = (nextSlide / (slick.slideCount - 1)) * 100;
-
-        $track
-          .css("background-size", `${calc}% 100%`)
-          .attr("aria-valuenow", calc);
-
-        $label.text(`${Math.round(calc)}% completed`);
-      });
-
-      // $(".expertise-next").on("click", () => $slider.slick("slickNext"));
-      // $(".expertise-prev").on("click", () => $slider.slick("slickPrev"));
-
-      $track.css({
-        "background-image": "linear-gradient(to right, #FFD52B 100%, #D9D9D9 100%)",
-        "background-size": "0% 100%",
-        "background-repeat": "no-repeat",
-      });
-    }
-
-
-    document.querySelectorAll('.slide-no').forEach((el) => {
-  const num = parseInt(el.textContent.trim(), 10);
-
-  if (!isNaN(num) && num < 10) {
-    el.textContent = '0' + num;
-  }
-});
-
-  })();
 
 
 
-    /* ============================================================
-    Blog
-  ============================================================ */
-
-(() => {
-    const $slider = $(".blog-slider");
-    const $track = $(".blog .progress-track");
-    const $label = $(".blog .progress-fill");
-
-    if ($slider.length) {
-      $slider.slick({
-        slidesToShow: 5,
-        slidesToScroll: 1,
-        infinite: true,
-        // loop:true,
-        dots: false,
-        arrows: false,
-        cssEase: "linear",
-        autoplay: true,
-        autoplaySpeed: 1500,
-        swipeToSlide: true,
-           responsive: [
-
-      {
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 4,
-        },
-      },
-                
-                {
-                    breakpoint: 991,
-                    settings: {
-                        slidesToShow: 3,
-                    },
-                },  {
-                    breakpoint: 767,
-                    settings: {
-                        slidesToShow: 2,
-                    },
-                },
-    ],
-      });
-
-      $slider.on("beforeChange", (event, slick, currentSlide, nextSlide) => {
-        const calc = (nextSlide / (slick.slideCount - 1)) * 100;
-
-        $track
-          .css("background-size", `${calc}% 100%`)
-          .attr("aria-valuenow", calc);
-
-        $label.text(`${Math.round(calc)}% completed`);
-      });
-
-      // $(".expertise-next").on("click", () => $slider.slick("slickNext"));
-      // $(".expertise-prev").on("click", () => $slider.slick("slickPrev"));
-
-      $track.css({
-        "background-image": "linear-gradient(to right, #FFD52B 100%, #D9D9D9 100%)",
-        "background-size": "0% 100%",
-        "background-repeat": "no-repeat",
-      });
-    }
-
-
-    document.querySelectorAll('.slide-no').forEach((el) => {
-  const num = parseInt(el.textContent.trim(), 10);
-
-  if (!isNaN(num) && num < 10) {
-    el.textContent = '0' + num;
-  }
-});
-
-  })();
-
-    /* ============================================================
-Testimonial SLider
-  ============================================================ */
-
-(() => {
-    const $slider = $(".testimonial-slider");
-    const $track = $(".testimonial .progress-track");
-    const $label = $(".testimonial .progress-fill");
-
-    if ($slider.length) {
-      $slider.slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        // loop:true,
-        dots: false,
-        arrows: true,
-          prevArrow: $(".testimonial-prev"),
-    nextArrow: $(".testimonial-next"),
-        cssEase: "linear",
-        autoplay: true,
-        autoplaySpeed: 1500,
-        swipeToSlide: true,
-
-      });
-
-      $slider.on("beforeChange", (event, slick, currentSlide, nextSlide) => {
-        const calc = (nextSlide / (slick.slideCount - 1)) * 100;
-
-        $track
-          .css("background-size", `${calc}% 100%`)
-          .attr("aria-valuenow", calc);
-
-        $label.text(`${Math.round(calc)}% completed`);
-      });
-
-      // $(".expertise-next").on("click", () => $slider.slick("slickNext"));
-      // $(".expertise-prev").on("click", () => $slider.slick("slickPrev"));
-
-      $track.css({
-        "background-image": "linear-gradient(to right, #FFD52B 100%, #D9D9D9 100%)",
-        "background-size": "0% 100%",
-        "background-repeat": "no-repeat",
-      });
-    }
-
-
-    document.querySelectorAll('.slide-no').forEach((el) => {
-  const num = parseInt(el.textContent.trim(), 10);
-
-  if (!isNaN(num) && num < 10) {
-    el.textContent = '0' + num;
-  }
-});
-
-  })();
     /* ============================================================
 mission-vission- SLider
   ============================================================ */
