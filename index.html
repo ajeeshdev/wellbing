@@ -138,13 +138,15 @@
     </section>
 
 
-    <section class="home-about commonPadding position-relative">
+    <section class="home-about commonPadding position-relative vectorOverlay">
         
         <div class="container-ctn">
             <div class="d-flex flex-wrap justify-content-between position-relative">
                 <div class="video-wrapper">
                     <div class="video-container">
-                        <video src="public/video/video.mp4" poster="public/images/home/poster.jpg"></video>
+                        <video muted playsinline preload="metadata" poster="public/images/home/poster.jpg">
+                                <source src="public/video/video.mp4" type="video/mp4">
+                        </video>
                     </div>
             <button class="playButton" aria-label="Play or Pause Video">
                             <span><img src="public/images/home/play.png" width="100" height="100" alt=""></span>
@@ -159,7 +161,7 @@
                     </div>
                 </div>
 
-                <div class="company">
+                <div class="company bg-style">
                     <h2>About the company</h2>
                     <div>
                         <p>Founded in 2008, Wellbing Packaging Machinery is the exclusive agency for some of China’s highest-quality machinery manufacturers. Guided by the principle “Best Never Rest,” we are committed to continuous improvement, delivering superior machinery, innovative designs, and reliable services that meet the unique needs of every customer. Wellbing specializes in providing complete turnkey project solutions for water,</p>
@@ -598,7 +600,7 @@
             <div class="d-flex flex-wrap justify-content-between">
                 <div class="brand">
                     <a href="index.php">
-                        <img src="public/images/logo.png" width="180" height="41"  alt="WELLBING">
+                        <img src="public/images/logo-footer.png" width="180" height="41"  alt="WELLBING">
                     </a>
                     <p>Founded in 2008, Wellbing Packaging Machinery is the exclusive agency for some of China’s highest-quality machinery manufacturers.</p>
                 </div>
@@ -636,7 +638,7 @@
     </div>
     <div class="footer-row-two">
         <div class="d-flex flex-wrap container-ctn align-items-center">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <div class="title">Follow Us</div>
             <ul class="d-flex flex-wrap">
                 <li>
@@ -670,7 +672,7 @@
                 </li>
             </ul>
             </div>
-            <div class="col-6 newsletter">
+            <div class="col-12 col-md-6 newsletter">
                 <div class="title">Subscribe to our newsletter</div>
                 <form action="">
                     <div class="position-relative formGroup">
@@ -688,7 +690,7 @@
             </div>
         </div>
     </div>
-    <div class="container-ctn d-flex flex-wrap copyright justify-content-between">
+    <div class="container-ctn d-flex flex-wrap copyright justify-content-md-between">
         <p>© 2025  Wellbing Technologies</p>
         <p>Powered by : <a href="https://www.mightywarner.ae/" target="_blank">Mighty Warners</a></p>
     </div>
@@ -896,7 +898,6 @@
 
 
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>

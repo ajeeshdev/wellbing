@@ -48,35 +48,20 @@ font-weight: 500;
 h4,
 .h4,.h4 strong {
   font-weight: 500;
+  font-size: 18px;
 
-  font-size: 13px;
-
-  @include min(768) {
-    font-size: 14px;
-  }
-  @include min(992) {
-    font-size: 13px;
-  }
-  @include min(1200) {
-    font-size: 14px;
-
-  }
-  @include min(1280) {
-    font-size: 14px;
-
-  }
   @include min(1350) {
-    font-size: 17px;
+    font-size: 20px;
 
   }
   @include min(1440) {
-    font-size: 16px;
+    font-size: 21px;
   }
   @include min(1600) {
-    font-size:  17px;
+    font-size:  22px;
   }
   @include min(1900) {
-    font-size: 20px;
+    font-size: 24px;
   }
 
 

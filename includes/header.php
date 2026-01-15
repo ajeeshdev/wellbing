@@ -1,10 +1,11 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Zabeel</title>
+    <title>Wellbing</title>
 
     <!-- Favicons -->
     <link rel="shortcut icon" href="public/images/fav.png" type="image/png" />
@@ -26,70 +27,50 @@
 <body>
 
     <header id="header" role="banner">
-        <div class="container-header">
+        <div class="container-ctn">
             <div class="d-flex justify-content-between align-items-center flex-wrap header-row">
-                <!-- Logo with alt text for screen readers -->
-                <a href="index.php" class="brand" alt="Zabeel logo" aria-label="Go to homepage">
-                    <picture><img src="public/images/logo.png" alt="Zabeel logo" width="95" height="103" /></picture>
-                </a>
-
-                <!-- Navigation bar for desktop users -->
-                <nav class="d-none d-xl-block" role="navigation" aria-label="Primary navigation">
-                    <ul class="d-flex flex-wrap">
-                        <li><a href="index.php">Home</a></li>
-                        <li><a href="about.php">About Us</a></li>
-                        <li><a href="services.php">Services</a></li>
-                        <li><a href="products.php">Products</a></li>
-                        <li><a href="blogs.php">Blogs</a></li>
-                        <li><a href="media.php">Media</a></li>
-                        <li><a href="careers.php">Careers</a></li>
-                        <li><a href="contact-us.php">Contact Us</a></li>
-                    </ul>
-                </nav>
-
-                <!-- Button and mobile hamburger menu -->
-                <div class="button-wrapper d-flex align-items-center">
-
-                    <a href="" target="_blank" class="btn btn-connect-mbs">Connect With <img
-                            src="public/images/mbs.png" width="50" height="48" alt=""></a>
-                    <a href="" target="_blank" class="btn btn-pay-online">Pay Online </a>
-                    <a href="mailto:info@zppdubai.com" target="_blank" class="btn btn-mail">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
-                            <path
-                                d="M1.00012 3C1.00012 2.46957 1.21084 1.96086 1.58591 1.58579C1.96098 1.21071 2.46969 1 3.00012 1H17.0001C17.5306 1 18.0393 1.21071 18.4143 1.58579C18.7894 1.96086 19.0001 2.46957 19.0001 3V13C19.0001 13.5304 18.7894 14.0391 18.4143 14.4142C18.0393 14.7893 17.5306 15 17.0001 15H3.00012C2.46969 15 1.96098 14.7893 1.58591 14.4142C1.21084 14.0391 1.00012 13.5304 1.00012 13V3Z"
-                                stroke="#DE4D50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M1.00012 2.99999L10.0001 8.99999L19.0001 2.99999" stroke="#DE4D50" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" /> </svg>
-                        <span>Email : </span> info@zppdubai.com
+                <div class="header-left d-flex align-items-center">
+                    <a href="index.php" class="brand" alt="Wellbing logo" aria-label="Go to homepage">
+                    <picture><img src="public/images/logo.png" alt="Wellbing logo" width="180" height="41" /></picture>
                     </a>
-                    <!-- Book Now button -->
-                    <!-- <button data-bs-toggle="modal" data-bs-target="#siteEnquiryForm" class="btn theme-btn round" aria-label="Click to book now">Book Now</button> -->
+                    <button class="navbar-toggler  d-md-flex align-items-center" type="button" data-bs-toggle="offcanvas" aria-label="Click to open menu" aria-controls="mobileMenu" data-bs-target="#mobileMenu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="29" height="18" viewBox="0 0 29 18" fill="none"> <line x1="1" y1="1" x2="28" y2="1" stroke="black" stroke-width="2" stroke-linecap="round"/> <line x1="1" y1="9" x2="28" y2="9" stroke="black" stroke-width="2" stroke-linecap="round"/> <line x1="1" y1="17" x2="28" y2="17" stroke="black" stroke-width="2" stroke-linecap="round"/> </svg>
+                        Products
+                    </button>
+                </div>
+                <div class="header-right d-flex align-items-center">
+                    <a href="mailto:sales1@wellbingmachinery.com">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"> <path d="M14.25 3H3.75C3.15326 3 2.58097 3.23705 2.15901 3.65901C1.73705 4.08097 1.5 4.65326 1.5 5.25V12.75C1.5 13.3467 1.73705 13.919 2.15901 14.341C2.58097 14.7629 3.15326 15 3.75 15H14.25C14.8467 15 15.419 14.7629 15.841 14.341C16.2629 13.919 16.5 13.3467 16.5 12.75V5.25C16.5 4.65326 16.2629 4.08097 15.841 3.65901C15.419 3.23705 14.8467 3 14.25 3ZM13.7475 4.5L9 8.0625L4.2525 4.5H13.7475ZM14.25 13.5H3.75C3.55109 13.5 3.36032 13.421 3.21967 13.2803C3.07902 13.1397 3 12.9489 3 12.75V5.4375L8.55 9.6C8.67982 9.69737 8.83772 9.75 9 9.75C9.16228 9.75 9.32018 9.69737 9.45 9.6L15 5.4375V12.75C15 12.9489 14.921 13.1397 14.7803 13.2803C14.6397 13.421 14.4489 13.5 14.25 13.5Z" fill="#EF4136"/> </svg>
+                        sales1@wellbingmachinery.com
+                    </a>
+                    <a href="tel:+971-65277252">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"> <path fill-rule="evenodd" clip-rule="evenodd" d="M4.29977 1.53247C5.21252 0.624972 6.71552 0.786223 7.47977 1.80772L8.42627 3.07072C9.04877 3.90172 8.99327 5.06272 8.25452 5.79697L8.07602 5.97547C8.05578 6.0504 8.05372 6.12909 8.07002 6.20497C8.11727 6.51097 8.37302 7.15897 9.44402 8.22397C10.515 9.28897 11.1675 9.54397 11.478 9.59197C11.5563 9.60771 11.6371 9.6054 11.7143 9.58522L12.0203 9.28072C12.6773 8.62822 13.6853 8.50597 14.4983 8.94772L15.9308 9.72772C17.1585 10.3937 17.4683 12.0617 16.4633 13.0615L15.3975 14.1205C15.0615 14.4542 14.61 14.7325 14.0595 14.7842C12.702 14.911 9.53927 14.749 6.21452 11.4437C3.11177 8.35822 2.51627 5.66722 2.44052 4.34122C2.40302 3.67072 2.71952 3.10372 3.12302 2.70322L4.29977 1.53247ZM6.57977 2.48197C6.19952 1.97422 5.49152 1.93372 5.09252 2.33047L3.91502 3.50047C3.66752 3.74647 3.54902 4.01797 3.56402 4.27747C3.62402 5.33122 4.10402 7.75897 7.00802 10.6465C10.0545 13.675 12.8678 13.7657 13.9553 13.6637C14.1773 13.6435 14.3978 13.528 14.604 13.3232L15.669 12.2635C16.1025 11.833 16.0073 11.0485 15.3938 10.7155L13.9613 9.93622C13.5653 9.72172 13.1018 9.79222 12.8138 10.0787L12.4725 10.4185L12.075 10.0195C12.4725 10.4185 12.4718 10.4192 12.471 10.4192L12.4703 10.4207L12.468 10.423L12.4628 10.4275L12.4515 10.438C12.4199 10.4674 12.3857 10.494 12.3495 10.5175C12.2895 10.5572 12.21 10.6015 12.1103 10.6382C11.9078 10.714 11.6393 10.7545 11.3078 10.7035C10.6575 10.6037 9.79577 10.1605 8.65052 9.02197C7.50602 7.88347 7.05902 7.02697 6.95852 6.37747C6.90677 6.04597 6.94802 5.77747 7.02452 5.57497C7.06662 5.46102 7.1269 5.35465 7.20302 5.25997L7.22702 5.23372L7.23752 5.22247L7.24202 5.21797L7.24427 5.21572L7.24577 5.21422L7.46177 4.99972C7.78277 4.67947 7.82777 4.14922 7.52552 3.74497L6.57977 2.48197Z" fill="#EF4136"/> </svg>
+                        +971-65277252
+                    </a>
+                  <div class="language-switcher" id="langSwitcher">
+                    <button class="lang-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"> <path d="M12 2.25C6.61547 2.25 2.25 6.61547 2.25 12C2.25 17.3845 6.61547 21.75 12 21.75C17.3845 21.75 21.75 17.3845 21.75 12C21.75 6.61547 17.3845 2.25 12 2.25Z" stroke="#272424" stroke-width="1.5" stroke-miterlimit="10"/> <path d="M12.0002 2.25C9.27812 2.25 6.71875 6.61547 6.71875 12C6.71875 17.3845 9.27812 21.75 12.0002 21.75C14.7222 21.75 17.2816 17.3845 17.2816 12C17.2816 6.61547 14.7222 2.25 12.0002 2.25Z" stroke="#272424" stroke-width="1.5" stroke-miterlimit="10"/> <path d="M5.5 5.5C7.2925 6.77266 9.54906 7.53156 12.0002 7.53156C14.4512 7.53156 16.7078 6.77266 18.5003 5.5M18.5003 18.5003C16.7078 17.2277 14.4512 16.4687 12.0002 16.4687C9.54906 16.4687 7.2925 17.2277 5.5 18.5003" stroke="#272424" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/> <path d="M12 2.25V21.75M21.75 12H2.25" stroke="#272424" stroke-width="1.5" stroke-miterlimit="10"/> </svg>
+                        <span class="current-lang">English</span>
+                        <span class="chevron"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none"> <path d="M16.1589 5.95402C15.9479 5.74312 15.6618 5.62464 15.3635 5.62464C15.0652 5.62464 14.7791 5.74312 14.5681 5.95402L8.9994 11.5228L3.43065 5.95402C3.21847 5.74909 2.93429 5.6357 2.63932 5.63826C2.34435 5.64083 2.06218 5.75914 1.8536 5.96773C1.64502 6.17631 1.5267 6.45847 1.52414 6.75345C1.52157 7.04842 1.63497 7.33259 1.8399 7.54477L8.20402 13.9089C8.41499 14.1198 8.70109 14.2383 8.9994 14.2383C9.29771 14.2383 9.5838 14.1198 9.79477 13.9089L16.1589 7.54477C16.3698 7.3338 16.4883 7.04771 16.4883 6.7494C16.4883 6.45109 16.3698 6.16499 16.1589 5.95402Z" fill="#272424"/> </svg></span>
+                    </button>
 
-                    <!-- Hamburger menu for mobile (trigger for offcanvas menu) -->
-                    <button class="navbar-toggler d-none d-xl-block"   type="button"
+                    <ul class="lang-menu" role="listbox">
+                        <li data-lang="en">English</li>
+                        <li data-lang="ar">العربية</li>
+                    </ul>
+                    </div>
+
+
+                    <button class="navbar-toggler d-flex align-items-center"   type="button"
                         data-bs-toggle="offcanvas"
                         data-bs-target="#burgerMenu"
                         aria-controls="burgerMenu"
                         aria-expanded="false"
                         aria-label="Open navigation menu">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                            <path
-                                d="M2 18C2 16.46 2 15.69 2.347 15.124C2.541 14.807 2.807 14.541 3.124 14.347C3.689 14 4.46 14 6 14C7.54 14 8.31 14 8.876 14.347C9.193 14.541 9.459 14.807 9.653 15.124C10 15.689 10 16.46 10 18C10 19.54 10 20.31 9.653 20.877C9.459 21.193 9.193 21.459 8.876 21.653C8.311 22 7.54 22 6 22C4.46 22 3.69 22 3.124 21.653C2.80735 21.4593 2.54108 21.1934 2.347 20.877C2 20.31 2 19.54 2 18ZM14 18C14 16.46 14 15.69 14.347 15.124C14.541 14.807 14.807 14.541 15.124 14.347C15.689 14 16.46 14 18 14C19.54 14 20.31 14 20.877 14.347C21.193 14.541 21.459 14.807 21.653 15.124C22 15.689 22 16.46 22 18C22 19.54 22 20.31 21.653 20.877C21.4589 21.1931 21.1931 21.4589 20.877 21.653C20.31 22 19.54 22 18 22C16.46 22 15.69 22 15.124 21.653C14.8073 21.4593 14.5411 21.1934 14.347 20.877C14 20.31 14 19.54 14 18ZM2 6C2 4.46 2 3.69 2.347 3.124C2.541 2.807 2.807 2.541 3.124 2.347C3.689 2 4.46 2 6 2C7.54 2 8.31 2 8.876 2.347C9.193 2.541 9.459 2.807 9.653 3.124C10 3.689 10 4.46 10 6C10 7.54 10 8.31 9.653 8.876C9.459 9.193 9.193 9.459 8.876 9.653C8.311 10 7.54 10 6 10C4.46 10 3.69 10 3.124 9.653C2.80724 9.45904 2.54096 9.19277 2.347 8.876C2 8.311 2 7.54 2 6ZM14 6C14 4.46 14 3.69 14.347 3.124C14.541 2.807 14.807 2.541 15.124 2.347C15.689 2 16.46 2 18 2C19.54 2 20.31 2 20.877 2.347C21.193 2.541 21.459 2.807 21.653 3.124C22 3.689 22 4.46 22 6C22 7.54 22 8.31 21.653 8.876C21.459 9.193 21.193 9.459 20.877 9.653C20.31 10 19.54 10 18 10C16.46 10 15.69 10 15.124 9.653C14.8072 9.45904 14.541 9.19277 14.347 8.876C14 8.311 14 7.54 14 6Z"
-                                stroke="#D91F24" stroke-width="1.5" /> </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="18" viewBox="0 0 29 18" fill="none"> <line x1="1" y1="1" x2="28" y2="1" stroke="black" stroke-width="2" stroke-linecap="round"/> <line x1="1" y1="9" x2="28" y2="9" stroke="black" stroke-width="2" stroke-linecap="round"/> <line x1="1" y1="17" x2="28" y2="17" stroke="black" stroke-width="2" stroke-linecap="round"/> </svg>
+                        Menu
                     </button>
-                    <button class="navbar-toggler d-xl-none" type="button" data-bs-toggle="offcanvas"
-                        aria-label="Click to open menu" aria-controls="mobileMenu" data-bs-target="#mobileMenu">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none">
-                            <path
-                                d="M20.25 7.00101H3.75C3.33579 7.00101 3 7.33679 3 7.75101C3 8.16522 3.33579 8.50101 3.75 8.50101H20.25C20.6642 8.50101 21 8.16522 21 7.75101C21 7.33679 20.6642 7.00101 20.25 7.00101Z"
-                                fill="#D91F24" />
-                            <path
-                                d="M17.25 11.251H3.75C3.33579 11.251 3 11.5868 3 12.001C3 12.4152 3.33579 12.751 3.75 12.751H17.25C17.6642 12.751 18 12.4152 18 12.001C18 11.5868 17.6642 11.251 17.25 11.251Z"
-                                fill="#D91F24" />
-                            <path
-                                d="M20.25 15.499H3.75C3.33579 15.499 3 15.8348 3 16.249C3 16.6632 3.33579 16.999 3.75 16.999H20.25C20.6642 16.999 21 16.6632 21 16.249C21 15.8348 20.6642 15.499 20.25 15.499Z"
-                                fill="#D91F24" /> </svg>
-                    </button>
+                  
                 </div>
             </div>
         </div>

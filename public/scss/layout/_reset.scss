@@ -39,7 +39,15 @@ body {
   overflow-x: hidden;
   color: #737374;
 }
+.container-ceo{
+    margin-right: auto;
+  margin-left: auto;
+  max-width: 92%;
+  @include min(992){
+    max-width: 72.699%;
 
+  }
+}
 .container-ctn {
   max-width: 92%;
   margin-right: auto;

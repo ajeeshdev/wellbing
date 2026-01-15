@@ -116,15 +116,15 @@ header {
       }
 
       @include min(1440) {
-        padding: 33.5px 26px;
+        padding: 32.5px 26px;
       }
 
       @include min(1600) {
-        padding: 36.5px 28px;
+        padding: 33.5px 28px;
       }
 
       @include min(1900) {
-        padding: 39.5px 29px;
+        padding: 34px 26px;
       }
     }
   }

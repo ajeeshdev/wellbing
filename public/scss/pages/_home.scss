@@ -208,16 +208,19 @@
 .home-about {
     background: #F5F8FA;
 
+    &.vectorOverlay{
 
-    &:before {
-        @extend .position;
-        left: 0;
-        top: 0;
-        width: 34.692%;
-        height: 100%;
-        background: url(../images/vector/about.png);
-        background-repeat: no-repeat;
+        &:before {
+            @extend .position;
+            left: 0;
+            top: 0;
+            width: 34.692%;
+            height: 100%;
+            background: url(../images/vector/about.png);
+            background-repeat: no-repeat;
+        }
     }
+
 
     .playButton {
         margin-left: auto;
@@ -292,8 +295,11 @@
     }
 
     .video-wrapper {
+        height: fit-content;
         width:100%;
         @include min(992){
+            position: sticky;
+            top: 150px;
             width: 53.393%;
 
         }
@@ -316,16 +322,17 @@
     }
 
     .company {
-        background-color: #20232B;
-        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="294" height="193" viewBox="0 0 294 193" fill="none"><path opacity="0.3" d="M96.1738 0.5L165.771 199.3L166.241 200.646L166.714 199.301L189.947 133.166L190.006 133.001L189.948 132.836L143.7 0.5H239.196L308.819 199.46L309.291 200.809L309.763 199.46L379.359 0.5H428.296L342.371 246.157V246.158C338.359 257.732 331.143 267.182 320.746 274.514C310.336 281.846 298.999 285.5 286.71 285.5C274.795 285.5 263.506 282.29 253.459 275.846L252.49 275.212C242.205 268.359 234.707 259.147 229.978 247.563C226.636 238.031 221.632 223.618 214.966 204.324L214.485 202.933L214.02 204.329C210.919 213.617 206.033 227.553 199.363 246.14C194.025 259.291 186.721 269.118 177.466 275.66C168.209 282.203 156.963 285.486 143.701 285.486C131.408 285.486 119.88 281.95 109.12 274.838H109.119C98.3495 267.742 90.9802 258.65 86.9727 247.563L0.704102 0.5H96.1738Z" stroke="white" stroke-opacity="0.45"/></svg>');
-        background-repeat: no-repeat;
-        background-position: bottom right;
-        background-size: 45%;
-        padding: clamp(25px, 2.605vw, 50px);
         @include min(992){
             width: 38.8698%;
             
         }
+        &.bg-style{
+            background-color: #20232B;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="294" height="193" viewBox="0 0 294 193" fill="none"><path opacity="0.3" d="M96.1738 0.5L165.771 199.3L166.241 200.646L166.714 199.301L189.947 133.166L190.006 133.001L189.948 132.836L143.7 0.5H239.196L308.819 199.46L309.291 200.809L309.763 199.46L379.359 0.5H428.296L342.371 246.157V246.158C338.359 257.732 331.143 267.182 320.746 274.514C310.336 281.846 298.999 285.5 286.71 285.5C274.795 285.5 263.506 282.29 253.459 275.846L252.49 275.212C242.205 268.359 234.707 259.147 229.978 247.563C226.636 238.031 221.632 223.618 214.966 204.324L214.485 202.933L214.02 204.329C210.919 213.617 206.033 227.553 199.363 246.14C194.025 259.291 186.721 269.118 177.466 275.66C168.209 282.203 156.963 285.486 143.701 285.486C131.408 285.486 119.88 281.95 109.12 274.838H109.119C98.3495 267.742 90.9802 258.65 86.9727 247.563L0.704102 0.5H96.1738Z" stroke="white" stroke-opacity="0.45"/></svg>');
+            background-repeat: no-repeat;
+            background-position: bottom right;
+            background-size: 45%;
+            padding: clamp(25px, 2.605vw, 50px);
             &::after {
         @extend .position;
         background: $primaryColor;
@@ -335,42 +342,49 @@
         bottom: 0;
         left: -7%;
         }
-
-
-        h2 {
-            line-height: 100%;
-            color: #fff;
-            margin-bottom: clamp(8px, 0.94vw, 18px);
-            font-size: clamp(20px, 1.9vw, 36px);
-
-        }
-
-        p {
+  p {
             color: #C9C9C9;
-
-
         }
-
+        
         div {
             border-bottom: 1px solid #C9C9C9;
             ;
             padding-bottom: clamp(35px, 3.855vw, 74px);
             margin-bottom: clamp(22px, 2.292vw, 44px);
         }
+        a{
+                       color: #FFF;
+        }
+        h2{
+                color: #fff;
+        }
+        }
+
+
+        h2 {
+            line-height: 100%;
+        
+            margin-bottom: clamp(8px, 0.94vw, 18px);
+            font-size: clamp(20px, 1.9vw, 36px);
+
+        }
+
+      
+
 
        a{
         @extend .read-more;
-                    color: #FFF;
+         
        }
 
     }
 
     .counter {
         margin-top: 15px;
-        @include min(992){
-        margin-top: 5px;
-
-        }
+        @include min(992){margin-top: 6px;}
+        @include min(1200){margin-top: 10px;}
+        @include min(1350){margin-top: 12px;}
+        @include min(1600){margin-top: 14px;}
         div {
             height: fit-content;
             margin-left:clamp(20px, 1.93vw, 37px);
@@ -1262,9 +1276,16 @@ box-shadow: 0 0 10px 10px rgba(239, 65, 54, 0.08);
         border-radius: 20px;
         border: 1px solid #9CB8C9;
         background: #F5F8FA;
-        width: 643px;
         padding:  36px 36px 14px ;
         margin: 0px 11px;
+        width: 293px;
+        @include min(768){width: 330px;}
+        @include min(992){width: 320px;}
+        @include min(1200){width: 350px;}
+        @include min(1350){width: 425px;}
+        @include min(1440){width: 440px;}
+        @include min(1600){width: 550px;}
+        @include min(1900){width: 643px;}
         > p{
             font-weight: 500;
         }
@@ -1288,6 +1309,9 @@ box-shadow: 0 0 10px 10px rgba(239, 65, 54, 0.08);
         &-info {
             display: flex;
             flex-direction: column;
+            @include min(1400){gap: 3px;}
+            @include min(1600){gap: 3px;}
+            @include min(1900){gap: 4px;}
             &::after{
                 @extend .position;
                 background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M11.666 14.0007H5.83268C5.52326 14.0007 5.22652 13.8777 5.00772 13.6589C4.78893 13.4401 4.66602 13.1434 4.66602 12.834V8.75065C4.66602 8.44123 4.78893 8.14449 5.00772 7.92569C5.22652 7.7069 5.52326 7.58398 5.83268 7.58398H10.4993C10.8088 7.58398 11.1055 7.7069 11.3243 7.92569C11.5431 8.14449 11.666 8.44123 11.666 8.75065V14.0007ZM11.666 14.0007C11.666 16.9173 10.4993 18.6673 6.99935 20.4173M23.3327 14.0007H17.4993C17.1899 14.0007 16.8932 13.8777 16.6744 13.6589C16.4556 13.4401 16.3327 13.1434 16.3327 12.834V8.75065C16.3327 8.44123 16.4556 8.14449 16.6744 7.92569C16.8932 7.7069 17.1899 7.58398 17.4993 7.58398H22.166C22.4754 7.58398 22.7722 7.7069 22.991 7.92569C23.2098 8.14449 23.3327 8.44123 23.3327 8.75065V14.0007ZM23.3327 14.0007C23.3327 16.9173 22.166 18.6673 18.666 20.4173" stroke="%23EF4136" stroke-width="1.75" stroke-linecap="round"/></svg>');
@@ -1309,6 +1333,7 @@ box-shadow: 0 0 10px 10px rgba(239, 65, 54, 0.08);
 
 // ====================Map====================
 .map{
+    margin-bottom: -10px;
     iframe{
         width: 100%;
         height: clamp(250px, 29.94799vw, 575px);

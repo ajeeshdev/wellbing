@@ -116,12 +116,17 @@ slidesToShow: 1,
 
 //scroll button banner
 
-document.getElementById('scroll').addEventListener('click', () => {
-    window.scrollBy({
-        top: window.innerHeight, 
-        behavior: 'smooth'
+const scrollBtn = document.getElementById('scroll');
+
+if (scrollBtn) {
+    scrollBtn.addEventListener('click', () => {
+        window.scrollBy({
+            top: window.innerHeight,
+            behavior: 'smooth'
+        });
     });
-});
+}
+
 
 
 //video section
@@ -240,6 +245,7 @@ $(document).ready(function () {
             }
         ]
     });
+
 
 });
 
@@ -401,54 +407,6 @@ $(document).ready(function() {
 
 
 
-  
-  /* ============================================================
-     4.Brands
-  ============================================================ */
-
- 
-
-
-
-
-  
-
-
-
-    /* ============================================================
-mission-vission- SLider
-  ============================================================ */
-
-(() => {
-    const $slider = $(".mission-vission-slider");
-    const $track = $(".testimonial .progress-track");
-    const $label = $(".testimonial .progress-fill");
-
-
-      $slider.slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        infinite: true,
-        // loop:true,
-        dots: true,
-        arrows: false,
-
-        cssEase: "linear",
-        autoplay: true,
-        autoplaySpeed: 1500,
-        swipeToSlide: true,
-
-
-      
-    
-
-
-
-});
-
-  })();
-
-
   /* ============================================================
      5. Lazy Loading for Images
   ============================================================ */
@@ -478,45 +436,7 @@ mission-vission- SLider
 
   });
 
-  (() => {
-    const $slider = $(".gallery-slider");
-    const $track = $(".gallery .progress-track");
-    const $label = $(".gallery .progress-fill");
-
-    if ($slider.length) {
-      $slider.slick({
-        slidesToShow: 3,
-        slidesToScroll: 2,
-        infinite: true,
-        dots: false,
-        arrows: false,
-        cssEase: "linear",
-        autoplay: true,
-        autoplaySpeed: 1500,
-        variableWidth: true,
-        swipeToSlide: true,
-      });
-
-      $slider.on("beforeChange", (event, slick, currentSlide, nextSlide) => {
-        const calc = (nextSlide / (slick.slideCount - 1)) * 100;
-
-        $track
-          .css("background-size", `${calc}% 100%`)
-          .attr("aria-valuenow", calc);
-
-        $label.text(`${Math.round(calc)}% completed`);
-      });
-
-      // $(".expertise-next").on("click", () => $slider.slick("slickNext"));
-      // $(".expertise-prev").on("click", () => $slider.slick("slickPrev"));
-
-      $track.css({
-        "background-image": "linear-gradient(to right, #FFD52B 100%, #D9D9D9 100%)",
-        "background-size": "0% 100%",
-        "background-repeat": "no-repeat",
-      });
-    }
-  })();
+ 
 
 
   
@@ -534,127 +454,10 @@ mission-vission- SLider
   });
 
 
-$(document).ready(function () {
-  const slideDuration = 4000;
-
-  const $main = $(".product-detail-image");
-  const $nav = $(".product-detail-image-nav");
-
-  $main
-    .slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      dots: true,
-      infinite: true,
-      autoplay: true,
-      autoplaySpeed: slideDuration,
-      pauseOnHover: false,
-      pauseOnFocus: false,
-      asNavFor: $nav,
-    })
-    .on("afterChange", function () {
-      resetProgress();
-    });
-
-  $nav.slick({
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    asNavFor: $main,
-    arrows: true,
-    focusOnSelect: true,
-    variableWidth: true,
-    infinite: true,
-  });
-
-  function resetProgress() {
-    $(".slide-progress").css({
-      animation: "none",
-      width: 0,
-    });
-
-    const $active = $(".slick-current.slick-active .slide-progress");
-
-    if ($active.length) {
-      $active[0].offsetHeight; // force reflow
-      $active.css({
-        animation: `progressBar ${slideDuration}ms linear forwards`,
-      });
-    }
-  }
-
-  // 🔥 manually trigger first slide progress
-  setTimeout(resetProgress, 0);
-});
 
 
 
 
-  (() => {
-    const $slider = $(".other-products-slider-init");
-    const $track = $(".other-products .progress-track");
-    const $label = $(".other-products .progress-fill");
-
-    if ($slider.length) {
-      $slider.slick({
-        slidesToShow: 4,
-        slidesToScroll: 2,
-        infinite: true,
-        dots: false,
-        arrows: false,
-        cssEase: "linear",
-        autoplay: true,
-        autoplaySpeed: 1500,
-        swipeToSlide: true,
-
-             responsive: [
-
-      {
-        breakpoint: 1199,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-                
-                // {
-                //     breakpoint: 991,
-                //     settings: {
-                //         slidesToShow: 3,
-                //     },
-                
-                // },
-                
-                {
-                    breakpoint: 576,
-                    settings: {
-                        slidesToShow: 2,
-                    },
-                
-                }
-                
-    ],
-      });
-
-      $slider.on("beforeChange", (event, slick, currentSlide, nextSlide) => {
-        const calc = (nextSlide / (slick.slideCount - 1)) * 100;
-
-        $track
-          .css("background-size", `${calc}% 100%`)
-          .attr("aria-valuenow", calc);
-
-        $label.text(`${Math.round(calc)}% completed`);
-      });
-
-      // $(".expertise-next").on("click", () => $slider.slick("slickNext"));
-      // $(".expertise-prev").on("click", () => $slider.slick("slickPrev"));
-
-      $track.css({
-        "background-image": "linear-gradient(to right, #FFD52B 100%, #D9D9D9 100%)",
-        "background-size": "0% 100%",
-        "background-repeat": "no-repeat",
-      });
-    }
-  })();
 
 
 
@@ -691,9 +494,70 @@ function contactPhone(selector, phoneInput) {
 
 	
 initializePhoneInput("#siteEnquiryForm");	
-initializePhoneInput("#careerForm");	
-initializePhoneInput(".contact-section-row");	
 
+jQuery(function ($) {
 
+    const $main = $('.our-stories-slider');
+    const $nav = $('.our-stories-nav');
+    const $counter = $('.our-stories .slick-count');
 
+    if (!$main.length || !$nav.length || !$counter.length) return;
 
+    function updateCounter(slick, index) {
+        let current = (index ?? slick.currentSlide) + 1;
+        $counter.text(current < 10 ? '0' + current : current);
+    }
+
+    // MAIN slider counter
+    $main.on('init afterChange', function (e, slick, currentSlide) {
+        updateCounter(slick, currentSlide);
+    });
+
+    // INIT NAV FIRST
+    if (!$nav.hasClass('slick-initialized')) {
+        $nav.slick({
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            arrows: false,
+            dots: false,
+            focusOnSelect: true,
+            speed: 800,
+            infinite: true,                 // MUST MATCH
+            asNavFor: '.our-stories-slider',
+               responsive: [
+      {
+        breakpoint: 1199,
+        settings: {
+          slidesToShow: 4,
+        },
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 2,
+        },
+      }
+    ],
+        });
+    }
+
+    // INIT MAIN SECOND
+    if (!$main.hasClass('slick-initialized')) {
+        $main.slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: true,
+            infinite: true,
+            prevArrow: $('.our-stories .prev'),
+            nextArrow: $('.our-stories .next'),
+            asNavFor: '.our-stories-nav'
+        });
+    }
+
+});
