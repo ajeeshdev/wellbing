@@ -161,6 +161,22 @@
             </div>
         </div>
     </section>
+        <section class="clients commonPadding">
+        <div class="container-ctn overflow-hidden">
+            <h2 class="mb-2">Trusted By</h2>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+            <div class="clients-slider mt-2">
+                <picture><img src="public/images/brand/1.png" width="177" height="68"  alt=""></picture>
+                <picture><img src="public/images/brand/2.png" width="177" height="68"  alt=""></picture>
+                <picture><img src="public/images/brand/3.png" width="177" height="68"  alt=""></picture>
+                <picture><img src="public/images/brand/4.png" width="177" height="68"  alt=""></picture>
+                <picture><img src="public/images/brand/5.png" width="177" height="68"  alt=""></picture>
+                <picture><img src="public/images/brand/6.png" width="177" height="68"  alt=""></picture>
+                <picture><img src="public/images/brand/1.png" width="177" height="68"  alt=""></picture>
+            </div>
+                 <div class="clients-dots"></div>
+        </div>
+    </section>
 
     <?php include('includes/footer.php') ?>
 

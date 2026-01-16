@@ -130,35 +130,38 @@ if (scrollBtn) {
 
 
 //video section
+const videoContainer = document.querySelector('.video-container');
 
-const video = document.querySelector('.video-container video');
-const playButton = document.querySelector('.playButton');
-const playButtonText = document.querySelector('.playButton p');
-const playImg = playButton.querySelector('img');
+if (videoContainer) {
+    const video = videoContainer.querySelector('video');
+    const playButton = document.querySelector('.playButton');
+    const playButtonText = playButton?.querySelector('p');
+    const playImg = playButton?.querySelector('img');
 
-playButton.addEventListener('click', () => {
-    if (video.paused) {
-        video.play();
+    if (!video || !playButton || !playButtonText || !playImg) return;
 
-        playImg.src = "public/images/home/pause.png"; 
-        playButton.classList.add('is-playing');
-        playButtonText.innerHTML="Pause our video"
-    } else {
-        video.pause();
+    playButton.addEventListener('click', () => {
+        if (video.paused) {
+            video.play();
+            playImg.src = "public/images/home/pause.png";
+            playButton.classList.add('is-playing');
+            playButtonText.innerHTML = "Pause our video";
+        } else {
+            video.pause();
+            playImg.src = "public/images/home/play.png";
+            playButton.classList.remove('is-playing');
+            playButtonText.innerHTML = "Play our video";
+        }
+    });
+
+    video.addEventListener('ended', () => {
         playImg.src = "public/images/home/play.png";
         playButton.classList.remove('is-playing');
-                playButtonText.innerHTML="Play our video"
+        playButtonText.innerHTML = "Play our video";
+    });
+}
 
-    }
-});
 
-// Optional: Reset icon if video ends naturally
-video.addEventListener('ended', () => {
-    playImg.src = "public/images/home/play.png";
-    playButton.classList.remove('is-playing');
-                    playButtonText.innerHTML="Play our video"
-
-});
   /* ============================================================
      2. Slick Sliders
   ============================================================ */
@@ -186,7 +189,7 @@ $(document).ready(function () {
     }
 
     // Solutions slider
-    initSlider('.solutions-slider', '.solutions .slick-count', {
+    initSlider('.solutions-slider-init', '.solutions .slick-count', {
         slidesToShow: 2,
         slidesToScroll: 1,
         autoplay: true,
@@ -292,7 +295,7 @@ $(document).ready(function () {
     ],
 });
 
- $('.product-slider').slick({
+ $('.product-slider-init').slick({
     slidesToShow:4,
     slidesToScroll: 1,
     autoplay: true,
@@ -392,7 +395,7 @@ $(document).ready(function() {
   };
 
   const equalHeightTargets = [
-    ".bljhog, .service-card",
+    ".product-card .product-info",
   ];
 
   window.addEventListener("load", () => {
@@ -549,6 +552,7 @@ jQuery(function ($) {
 
     // INIT MAIN SECOND
     if (!$main.hasClass('slick-initialized')) {
+
         $main.slick({
             slidesToShow: 1,
             slidesToScroll: 1,
@@ -560,4 +564,39 @@ jQuery(function ($) {
         });
     }
 
+});
+
+//Product Detail Image sldier
+
+$(document).ready(function () {
+  $(".product-image-slider").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: false,
+    asNavFor: ".product-image-nav",
+    autoplay: true,
+    autoplaySpeed: 5000, 
+    pauseOnHover: false, 
+    fade: true,
+    cssEase: "linear",
+    speed: 800,
+    draggable: true,
+    dots: false,
+    lazyLoad: 'progressive',
+  });
+
+  $(".product-image-nav").slick({
+    slidesToShow: 4,
+    slidesToScroll: 1,
+       focusOnSelect: true,
+    asNavFor: ".product-image-slider",
+    dots: false,
+    draggable: true,
+    arrows: false,
+     vertical: true,
+  verticalSwiping: true,
+    // fade: true,
+    // cssEase: "linear",
+    speed: 800
+  });
 });

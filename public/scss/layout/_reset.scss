@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-weight: 300;
+  font-weight: 500;
   font-family: $primary-font;
   font-size: 14px;
             line-height:  160%;
@@ -49,7 +49,7 @@ body {
   }
 }
 .container-ctn {
-  max-width: 92%;
+  max-width: 93%;
   margin-right: auto;
   margin-left: auto;
 
@@ -393,26 +393,25 @@ li {
     margin-top: 18px;
     li {
       position: relative;
-      padding-left: clamp(28px, 2.1875vw, 42px);
+      padding-left: clamp(18px, 1.87498vw, 36px);
 
       &::before {
         @extend .position;
-        background-image: url('data:image/svg+xml,<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M21.1006 12H3.10058" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M15.1006 18L21.1006 12L15.1006 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.87501 12.0007C1.87501 12.2991 1.99354 12.5852 2.20452 12.7962C2.4155 13.0072 2.70165 13.1257 3.00001 13.1257H18.285L14.205 17.2057C14.0063 17.419 13.8981 17.7011 13.9033 17.9925C13.9084 18.284 14.0265 18.562 14.2326 18.7682C14.4387 18.9743 14.7168 19.0923 15.0082 19.0975C15.2997 19.1026 15.5818 18.9944 15.795 18.7957L21.795 12.7957C22.0057 12.5848 22.124 12.2988 22.124 12.0007C22.124 11.7026 22.0057 11.4167 21.795 11.2057L15.795 5.20572C15.5818 5.007 15.2997 4.89882 15.0082 4.90396C14.7168 4.9091 14.4387 5.02717 14.2326 5.23329C14.0265 5.43941 13.9084 5.71749 13.9033 6.00894C13.8981 6.30039 14.0063 6.58246 14.205 6.79572L18.285 10.8757L3.00001 10.8757C2.70165 10.8757 2.4155 10.9942 2.20452 11.2052C1.99354 11.4162 1.87501 11.7024 1.87501 12.0007Z" fill="%23EF4136"/></svg>');
         background-size: contain;
         background-repeat: no-repeat;
-        background-color: $primaryColor;
         border-radius: 50%;
-        background-position: center center;
+           background-position: center left;
         left: 0;
         top: 0px;
             width: 22px;
         height: 22px;
-        background-size: 14px;
+      background-size: 14px;
 
         @include min(992){
-           width:30px;
-        height: 30px;
-        background-size: 18px;
+           width:24px;
+        height: 24px;
+        background-size: 90%;
         }
       }
 
@@ -1041,3 +1040,32 @@ input[type=number] {
             width: 22px;
         }
     }
+
+     .head-container{
+        margin-bottom: 20px;
+        @include min(576){margin-bottom: 18px;}
+        @include min(768){ margin-bottom: 20px;}
+        @include min(992){margin-bottom: 22px;}
+        @include min(1200){margin-bottom: 24px;}
+        @include min(1280){margin-bottom: 28px;}
+        @include min(1350){margin-bottom: 30px;}
+        @include min(1440){margin-bottom: 32px;}
+        @include min(1600){margin-bottom: 34px;}
+        @include min(1900){margin-bottom: 36px;}
+        h1{
+          color: #000;
+          font-weight: 500;
+          line-height: 100% ;
+              font-size: 23px;
+          @include min(576){font-size: 30px; }
+          @include min(768){font-size: 33px;}
+          @include min(992){font-size: 35px; }
+          @include min(1200){font-size: 40px; }
+          @include min(1280){font-size: 45px; }
+          @include min(1350){font-size: 50px; }
+          @include min(1440){font-size: 55px; }
+          @include min(1600){font-size: 60px; }
+          @include min(1900){font-size: 64px;}
+
+        }
+        }

@@ -1,4 +1,4 @@
-
+<?php include('includes/product-enquiry.php') ?>
     <footer>
         <div class="footer-row-one">
             <div class="container-ctn">

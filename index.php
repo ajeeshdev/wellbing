@@ -118,7 +118,7 @@
         </div>
         <section class="solutions-outer">
               <div class="container-ctn">
-            <div class="solutions-slider">
+            <div class="solutions-slider solutions-slider-init">
                 <div class="solutions-slider-item">
                     <h3>Turnkey Water Treatment System</h3>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
@@ -145,9 +145,7 @@
                     <picture>
                         <img src="public/images/home/beverage-processing.jpg" width="760" height="364" class="img-fluid"  alt="Turnkey Water Treatment System">
                     </picture>
-                    <a href="">
-                        Read more
-                    </a>
+                    <a href="">Read more</a>
                 </div>
             </div>
         </div>
@@ -157,28 +155,14 @@
         </svg>
     </section>
 
-    <section class="clients commonPadding">
-        <div class="container-ctn">
-            <h2>Trusted By</h2>
-            <div class="clients-slider">
-                <picture><img src="public/images/brand/1.png" width="177" height="68"  alt=""></picture>
-                <picture><img src="public/images/brand/2.png" width="177" height="68"  alt=""></picture>
-                <picture><img src="public/images/brand/3.png" width="177" height="68"  alt=""></picture>
-                <picture><img src="public/images/brand/4.png" width="177" height="68"  alt=""></picture>
-                <picture><img src="public/images/brand/5.png" width="177" height="68"  alt=""></picture>
-                <picture><img src="public/images/brand/6.png" width="177" height="68"  alt=""></picture>
-                <picture><img src="public/images/brand/1.png" width="177" height="68"  alt=""></picture>
-            </div>
-                 <div class="clients-dots"></div>
-        </div>
-    </section>
+
 
     <section class="product commonPadding position-relative">
         <div class="container-ctn border-bt">
             <h2>Our Products</h2>
         </div>
         <div class="container-side">
-            <div class="product-slider">
+            <div class="product-slider product-slider-init">
                 <div class="product-card">
                     <picture><img src="public/images/products/1.jpg" width="482" height="304" alt=""></picture>
                     <div>

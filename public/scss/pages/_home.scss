@@ -478,18 +478,7 @@
         h2{
             margin-bottom: 0
         }
-        &-container{
-        margin-bottom: 10px;
-        @include min(576){margin-bottom: 18px;}
-        @include min(768){ margin-bottom: 20px;}
-        @include min(992){margin-bottom: 22px;}
-        @include min(1200){margin-bottom: 24px;}
-        @include min(1280){margin-bottom: 28px;}
-        @include min(1350){margin-bottom: 30px;}
-        @include min(1440){margin-bottom: 32px;}
-        @include min(1600){margin-bottom: 34px;}
-        @include min(1900){margin-bottom: 36px;}
-        }
+      
     }
   
  
@@ -549,20 +538,28 @@
     h2{
         color: #2F2F2F;
     }
-
+    .slick-list{
+        margin-left: -8px; margin-right:-8px;
+        @include min(768){margin-left: -10px; margin-right:-10px;}
+        @include min(992){margin-left: -12px; margin-right:-12px;}
+        @include min(1200){margin-left: -14px; margin-right:-14px;}
+        @include min(1350){margin-left: -16px; margin-right:-16px;}
+        @include min(1440){margin-left: -17px; margin-right:-17px;}
+        @include min(1600){margin-left: -17.5px; margin-right:-17.5px;}
+        @include min(1900){margin-left: -18px; margin-right:-18px;}
+    }
     picture{
         border-radius: 10px;
         background: #FFF;
-        margin-left: clamp(5px, 0.8334vw, 18px);
-        margin-right: clamp(5px, 0.8334vw, 18px);
+        margin-left: 8px; margin-right:8px;
         padding: 4px;
-        @include min(768){  padding:18px  30px;   border-radius: 6px;}
-        @include min(992){  padding:19px  32px;}
-        @include min(1200){  padding:20px  34px;   border-radius: 8px;}
-        @include min(1350){  padding:21px  36px;   border-radius: 10px;}
-        @include min(1440){  padding:22px  38px;}
-        @include min(1600){  padding:23px  40px;}
-        @include min(1900){  padding:24px  42px;}
+        @include min(768){  padding:18px  30px;   border-radius: 6px;margin-left: 10px; margin-right:10px;}
+        @include min(992){  padding:19px  32px;margin-left: 12px; margin-right:12px;}
+        @include min(1200){  padding:20px  34px;   border-radius: 8px;margin-left: 14px; margin-right:14px;}
+        @include min(1350){  padding:21px  36px;   border-radius: 10px;margin-left: 16px; margin-right:16px;}
+        @include min(1440){  padding:22px  38px;margin-left: 17px; margin-right:17px;}
+        @include min(1600){  padding:23px  40px;margin-left: 17.5px; margin-right:17.5px;}
+        @include min(1900){  padding:24px  42px;margin-left: 18px; margin-right:18px;}
         img{
             width: 100%;
             height: auto;
@@ -679,7 +676,7 @@ html[dir="rtl"]{
                 border-bottom: 1px solid #EEEEEE;
         }
     }
-    &-card{
+    .product-card{
         border-radius: 20px;
         background: #F5F8FA;
         padding: clamp(10px, 1.042vw, 20px);

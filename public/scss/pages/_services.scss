@@ -2,34 +2,48 @@
     .services-box{
         display: flex;
         flex-direction: column;
-        width: 511px;
+        width: 100%;
+        @include min(768){
+            width: 30.95%;
+        }
         &:nth-last-child(even){
             picture{
-                order: -1;
-                margin-top: 0;
-                margin-bottom: 26px;
+         
+                @include min(768){
+                    margin-top: 0;
+                    margin-bottom: 26px;
+                  order: -1;
+                }
             }
         }
         h3{
             color: #000;
             line-height: 100%;
             margin-bottom: 16px;
+            @include min(768){}
         }
         div{
-               flex-grow: 1;
-              display: flex;
+             
         }
         img{
             width: 100%;
             object-fit: cover;
-            height: 283px;
-            
+                height: 190px;
+
+            @include min(768){
+                height: clamp(200px, 13.265vw, 283px);
+            }
         }
         picture{
             margin-top: 18px;
         }
     }
     .services-row{
-        gap: 73px 4.37%;
+        padding-top: 10px;
+        gap:30px 3.572%;
+        @include min(768){
+            gap:73px 3.572%;
+
+        }
     }
 }
