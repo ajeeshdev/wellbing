@@ -11,63 +11,139 @@
 
             <div class="modal-body p-0">
                 <!-- Label used by aria-labelledby -->
-                <p class="title " id="productEnquiryFormLabel">
+                <p class="title h3" id="productEnquiryFormLabel">
                   Enquire Now
                 </p>
-          
+              <form id="siteEnquiry"
+                    action=""
+                    method="post"
+                    class="d-flex flex-wrap justify-content-between"
+                    novalidate>
 
-                <form id="siteEnquiry" action="" method="post" enctype="multipart/form-data"
-                    class="d-flex flex-wrap justify-content-between" novalidate>
-                  <!-- Row 1 -->
-    <div class="formGroup col--6">
-      <input type="text" placeholder="Name" class="form-control">
-    </div>
-    <div class="formGroup col--6">
-      <input type="email" placeholder="Email" class="form-control">
-    </div>
+                  <!-- Name -->
+                  <div class="formGroup col--6">
+                      <label for="name">Name</label>
+                      <input type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your name"
+                            class="form-control"
+                            required>
+                      <span class="error-message" data-error-for="name"></span>
+                  </div>
 
-    <!-- Row 2 -->
-    <div class="formGroup col--6">
-        <input type="number" placeholder="Phone" class="form-control phone_number" id="phone">
+                  <!-- Email -->
+                  <div class="formGroup col--6">
+                      <label for="email">Email</label>
+                      <input type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            class="form-control"
+                            required>
+                      <span class="error-message" data-error-for="email"></span>
+                  </div>
 
-    </div>
-    <div class="formGroup col--6">
-      <input type="text" placeholder="Company" class="form-control">
-    </div>
+                  <!-- Phone -->
+                  <div class="formGroup col--6">
+                      <label for="phone">Phone</label>
+                      <input type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Enter your phone"
+                            class="form-control phone_number"
+                            required>
+                      <span class="error-message" data-error-for="phone"></span>
+                  </div>
 
-    <!-- Upload area -->
-     <div class="upload-area-container w-100 text-center">
-       <div class="upload-area col-12 text-center">
-  <input type="file" id="fileUpload" multiple hidden>
-         <label for="fileUpload">
-           <span class="upload-icon"><svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" fill="none">
-     <path d="M25.5 43.5V27M33 43.5C40.47 43.5 46.5 37.47 46.5 30C46.5 22.53 40.47 16.5 33 16.5C32.37 16.5 31.74 16.59 31.14 16.68C29.85 11.43 25.14 7.5 19.5 7.5C12.87 7.5 7.5 12.87 7.5 19.5C7.5 20.82 7.77 22.05 8.16 23.25C6.1979 24.0166 4.51265 25.3572 3.32447 27.0966C2.13629 28.8361 1.50044 30.8935 1.5 33C1.5 38.79 6.21 43.5 12 43.5H18M18 33L24.45 26.55C25.05 25.95 25.98 25.95 26.58 26.55L33 33" stroke="#ACACAC" stroke-width="3" stroke-linecap="round"/>
-   </svg></span>
-           <div class="d-flex flex-wrap justify-content-center"><strong>Click to upload</strong> <span>or drag and drop</span>
-         </div>
-       </label>
-      </div>
-      <small>Maximum file size 50MB.</small>
-     </div>
+                  <!-- Product -->
+                  <div class="formGroup col--6">
+                      <label for="product">Product</label>
+                      <input type="text"
+                            id="product"
+                            name="product"
+                            class="form-control"
+                            value="Product Name1"
+                            readonly>
+                      <span class="error-message" data-error-for="product"></span>
+                  </div>
 
-    <!-- Uploaded files list (static HTML for now) -->
-    <div class="uploaded-files d-flex flex-wrap justify-content-between w-100"></div>
+                  <!-- Message -->
+                  <div class="formGroup col--12 w-100">
+                      <label for="message">Message</label>
+                      <textarea id="message"
+                                name="message"
+                                placeholder="Message"
+                                class="form-control message-box"
+                                rows="4"
+                                required></textarea>
+                      <span class="error-message" data-error-for="message"></span>
+                  </div>
 
-    <!-- Message -->
-    <textarea placeholder="Message" class="form-control message-box"></textarea>
+                  <!-- Actions -->
+                  <div class="d-flex justify-content-end buttonGroup p-0 w-100">
+                      <button type="submit" class="btn theme-btn bgYellow">
+                          Submit
+                      </button>
+                      <button type="button"
+                              class="btn theme-btn bgCancel"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                              id="productEnquiryFormCancel">
+                          Cancel
+                      </button>
+                  </div>
+              </form>
 
-    <!-- Actions -->
-                    <div class="d-flex justify-content-end buttonGroup p-0 w-100">
-                        <button type="submit" class="btn theme-btn bgYellow ">
-                           Submit
-                        </button>
-                        <button type="button" class=" btn theme-btn bgCancel " data-bs-dismiss="modal"
-                            aria-label="Close" id="productEnquiryFormCancel">
-                            Cancel
-                        </button>
-                    </div>
-                </form>
+
             </div>
         </div>
     </div>
 </div>
+
+
+<script>
+document.getElementById('siteEnquiry').addEventListener('submit', function (e) {
+    e.preventDefault(); // stop form submit
+
+    let hasError = false;
+
+    // clear old errors
+    document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+
+    const fields = [
+        { id: 'name', message: 'Name is required' },
+        { id: 'email', message: 'Valid email is required' },
+        { id: 'phone', message: 'Phone number is required' },
+        { id: 'message', message: 'Message is required' }
+    ];
+
+    fields.forEach(field => {
+        const input = document.getElementById(field.id);
+        const error = document.querySelector(`[data-error-for="${field.id}"]`);
+
+        if (!input.value.trim()) {
+            error.textContent = field.message;
+            input.classList.add('is-invalid');
+            hasError = true;
+        } else {
+            input.classList.remove('is-invalid');
+        }
+    });
+
+    // email format check (basic, not stupid)
+    const email = document.getElementById('email');
+    const emailError = document.querySelector('[data-error-for="email"]');
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (email.value && !emailRegex.test(email.value)) {
+        emailError.textContent = 'Enter a valid email address';
+        email.classList.add('is-invalid');
+        hasError = true;
+    }
+
+    if (!hasError) {
+        this.submit(); // submit only if valid
+    }
+});
+</script>

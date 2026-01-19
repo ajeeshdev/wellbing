@@ -77,7 +77,10 @@ footer{
             font-weight: 400;
         }
         &:last-child{
-            margin-top: 20px;
+            @include max(575){
+                margin-top: 20px;
+
+            }
         }
     }
     .footer-row-one{

@@ -441,7 +441,7 @@ li {
 }
 .list ul li {
   position: relative;
-  padding-left: clamp(18px, 1.87498vw, 36px);
+  padding-left: clamp(22px, 1.87498vw, 36px);
 }
 .list ul li::before {
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.87501 12.0007C1.87501 12.2991 1.99354 12.5852 2.20452 12.7962C2.4155 13.0072 2.70165 13.1257 3.00001 13.1257H18.285L14.205 17.2057C14.0063 17.419 13.8981 17.7011 13.9033 17.9925C13.9084 18.284 14.0265 18.562 14.2326 18.7682C14.4387 18.9743 14.7168 19.0923 15.0082 19.0975C15.2997 19.1026 15.5818 18.9944 15.795 18.7957L21.795 12.7957C22.0057 12.5848 22.124 12.2988 22.124 12.0007C22.124 11.7026 22.0057 11.4167 21.795 11.2057L15.795 5.20572C15.5818 5.007 15.2997 4.89882 15.0082 4.90396C14.7168 4.9091 14.4387 5.02717 14.2326 5.23329C14.0265 5.43941 13.9084 5.71749 13.9033 6.00894C13.8981 6.30039 14.0063 6.58246 14.205 6.79572L18.285 10.8757L3.00001 10.8757C2.70165 10.8757 2.4155 10.9942 2.20452 11.2052C1.99354 11.4162 1.87501 11.7024 1.87501 12.0007Z" fill="%23EF4136"/></svg>');
@@ -457,9 +457,43 @@ li {
 }
 @media (min-width: 992px) {
   .list ul li::before {
+    background-size: cover;
+  }
+}
+@media (min-width: 992px) {
+  .list ul li::before {
+    width: 18px;
+    height: 18px;
+  }
+}
+@media (min-width: 1200px) {
+  .list ul li::before {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media (min-width: 1350px) {
+  .list ul li::before {
+    width: 21px;
+    height: 21px;
+  }
+}
+@media (min-width: 1440px) {
+  .list ul li::before {
+    width: 22px;
+    height: 22px;
+  }
+}
+@media (min-width: 1600px) {
+  .list ul li::before {
+    width: 23px;
+    height: 23px;
+  }
+}
+@media (min-width: 1900px) {
+  .list ul li::before {
     width: 24px;
     height: 24px;
-    background-size: 90%;
   }
 }
 .list ul li + li {
@@ -475,7 +509,7 @@ span.error {
 
 .error-message {
   color: #FF4040;
-  display: none;
+  display: block;
   font-size: 12px;
   position: absolute;
   bottom: -20px;
@@ -777,9 +811,8 @@ input[type=number] {
 }
 
 .modal-backdrop.show {
+  background: rgba(3, 6, 16, 0.8);
   opacity: 1;
-  background: rgb(25, 33, 60) !important;
-  opacity: 0.53;
 }
 
 .mobile-menu {
@@ -1448,8 +1481,10 @@ footer .quick-links a {
   color: #BFBFBF;
   font-weight: 400;
 }
-footer .quick-links:last-child {
-  margin-top: 20px;
+@media (max-width: 575px) {
+  footer .quick-links:last-child {
+    margin-top: 20px;
+  }
 }
 footer .footer-row-one {
   border-bottom: 1px solid #EEEEEE;
@@ -1966,460 +2001,207 @@ html[dir=rtl] .newsletter .formGroup svg {
   margin-bottom: 20px;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .siteEnquiryForm .modal-dialog {
-    max-width: 720px;
+.productEnquiryForm .modal-dialog {
+  max-width: 4100%;
+}
+@media (min-width: 768px) {
+  .productEnquiryForm .modal-dialog {
+    max-width: 70.8875%;
   }
 }
-@media (max-width: 767px) {
-  .siteEnquiryForm .modal-dialog {
-    max-width: 100%;
-    margin: 10px;
+@media (min-width: 992px) {
+  .productEnquiryForm .modal-dialog {
+    max-width: 60%;
   }
 }
-.siteEnquiryForm .modal-dialog {
-  max-width: 936px;
-}
-.siteEnquiryForm .modal-content {
-  border-radius: 20px;
-  box-shadow: 0 0 10px 10px rgba(54, 54, 54, 0.11);
-  padding: clamp(25px, 2.3959vw, 46px);
-}
-.siteEnquiryForm label {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.siteEnquiryForm label strong {
-  text-decoration: underline;
-  font-weight: 400 !important;
-  margin-bottom: 8px;
+@media (min-width: 1200px) {
+  .productEnquiryForm .modal-dialog {
+    max-width: 42.8875%;
+  }
 }
 
 .modal-content {
-  /* ================= FILE ITEM ================= */
-  /* ================= INPUTS ================= */
-  /* ================= PROGRESS ================= */
-  /* ================= CLOSE BUTTON ================= */
-  /* ================= UPLOAD AREA ================= */
-  /* ================= BUTTON GROUP ================= */
-  /* ================= COLORS ================= */
-  /* ================= GRID ================= */
-}
-.modal-content .formGroup,
-.modal-content .upload-area-container,
-.modal-content .uploaded-files:has(.file-item) {
-  margin-bottom: clamp(15px, 1.24999vw, 24px);
-}
-.modal-content small {
-  font-weight: 300;
-  line-height: 125%;
-  color: #4B535D;
-  font-size: clamp(12px, 0.834vw, 16px);
-}
-.modal-content .title {
-  line-height: 100%;
-  padding-top: 15px;
-  font-size: clamp(20px, 1.46vw, 28px);
-  font-weight: 500;
-  margin-bottom: clamp(20px, 2.11vw, 42px);
-}
-.modal-content .file-item {
-  position: relative;
-  width: 48.695%;
-  border-radius: 5px;
-  border: 1px solid #C9C9C9;
+  border-radius: 15px;
   background: #FFF;
-  padding: 12px;
-}
-.modal-content .file-item .remove-file {
-  position: absolute;
-  right: 12px;
-  top: 12px;
-  background: unset;
-}
-.modal-content input:focus, .modal-content select:focus {
-  box-shadow: unset;
-  border: 1px solid #C9C9C9;
-}
-.modal-content input[type=text],
-.modal-content input[type=number],
-.modal-content input[type=tel],
-.modal-content input[type=email],
-.modal-content textarea, .modal-content select {
-  border: 1px solid #C9C9C9;
-  border-radius: 5px;
-  font-weight: 200;
-  color: #4B535D;
-}
-.modal-content input[type=text]::-moz-placeholder, .modal-content input[type=number]::-moz-placeholder, .modal-content input[type=tel]::-moz-placeholder, .modal-content input[type=email]::-moz-placeholder, .modal-content textarea::-moz-placeholder, .modal-content select::-moz-placeholder {
-  color: #4B535D;
-}
-.modal-content input[type=text]::placeholder,
-.modal-content input[type=number]::placeholder,
-.modal-content input[type=tel]::placeholder,
-.modal-content input[type=email]::placeholder,
-.modal-content textarea::placeholder, .modal-content select::placeholder {
-  color: #4B535D;
-}
-.modal-content input[type=text],
-.modal-content input[type=number],
-.modal-content input[type=tel],
-.modal-content input[type=email], .modal-content select {
-  height: clamp(35px, 3.6459vw, 70px);
-}
-.modal-content textarea {
-  height: clamp(70px, 7.44799vw, 143px);
-}
-.modal-content .file-size {
-  display: block;
-  color: #4B535D;
-  font-weight: 300;
-  margin-bottom: 9px;
-  font-size: clamp(12px, 0.81vw, 16px);
-}
-.modal-content .file-icon {
-  border-radius: 5px;
-  background: #F2F2F2;
-  width: clamp(30px, 2.61vw, 50px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
+  box-shadow: 0 0 15px 10px rgba(0, 0, 0, 0.11);
+  padding: clamp(18px, 1.87498vw, 36px);
 }
 @media (min-width: 992px) {
-  .modal-content .file-icon {
-    gap: 5px;
+  .modal-content {
+    border-radius: 20px;
   }
-}
-@media (min-width: 1200px) {
-  .modal-content .file-icon {
-    gap: 6px;
-  }
-}
-@media (min-width: 1350px) {
-  .modal-content .file-icon {
-    gap: 7px;
-  }
-}
-@media (min-width: 1440px) {
-  .modal-content .file-icon {
-    gap: 8px;
-  }
-}
-@media (min-width: 1600px) {
-  .modal-content .file-icon {
-    gap: 9px;
-  }
-}
-@media (min-width: 1900px) {
-  .modal-content .file-icon {
-    gap: 10px;
-  }
-}
-.modal-content .file-icon + div {
-  width: 83%;
-}
-.modal-content .file-icon svg {
-  width: 28px;
-  height: auto;
-}
-.modal-content .progress {
-  height: 6px;
-}
-.modal-content .progress i {
-  display: block;
-  width: 0;
-  height: 100%;
-  background: #FFA600;
-  box-shadow: 0 0 6px rgba(255, 166, 0, 0.6);
-  transition: width 0.3s ease;
 }
 .modal-content .btn-close {
   position: absolute;
-  right: clamp(10px, 3.23vw, 46px);
-  top: clamp(10px, 3.23vw, 46px);
-  width: clamp(30px, 3.23vw, 50px);
-  height: clamp(30px, 3.23vw, 50px);
+  right: 4%;
+  top: 3%;
   border-radius: 50%;
-  background: #D0DBE6;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 1;
+  width: clamp(40px, 2.6042vw, 50px);
+  height: clamp(40px, 2.6042vw, 50px);
+}
+@media (min-width: 576px) {
+  .modal-content .btn-close {
+    top: 6%;
+  }
 }
 .modal-content .btn-close svg {
-  width: clamp(10px, 3.23vw, 11px);
+  height: auto;
+  width: clamp(10px, 0.72917vw, 14.014px);
 }
-.modal-content .upload-area-container {
-  border-radius: 10px;
-  border: 1px dashed #C9C9C9;
-  background: #FFF;
-  padding: clamp(15px, 1.9792vw, 38px);
+.modal-content .btn-close:hover {
+  background: #EF4136;
 }
-.modal-content .upload-icon {
-  display: flex;
+.modal-content .btn-close:hover path {
+  stroke: #fff;
+}
+.modal-content .title {
   width: -moz-fit-content;
   width: fit-content;
-  margin: 0 auto 12px;
-  background: #EEE;
-  border-radius: 50%;
-  padding: clamp(12px, 0.81vw, 16px);
+  color: #000;
+  margin-bottom: clamp(22px, 2.3438vw, 45px);
 }
-.modal-content .upload-icon svg {
-  height: auto;
-  width: clamp(24px, 2.5vw, 48px);
+.modal-content .buttonGroup {
+  gap: 12px;
 }
-.modal-content .file-info {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4px;
+.modal-content .buttonGroup button {
+  font-weight: 400;
+  border-radius: 100px;
+  line-height: 160%;
+  padding: 6px 24px;
+}
+@media (min-width: 768px) {
+  .modal-content .buttonGroup button {
+    padding: 4px 13px;
+  }
 }
 @media (min-width: 992px) {
-  .modal-content .file-info {
-    gap: 5px;
+  .modal-content .buttonGroup button {
+    padding: 5px 15px;
   }
 }
 @media (min-width: 1200px) {
-  .modal-content .file-info {
-    gap: 6px;
+  .modal-content .buttonGroup button {
+    padding: 6px 17px;
   }
 }
 @media (min-width: 1350px) {
-  .modal-content .file-info {
-    gap: 7px;
+  .modal-content .buttonGroup button {
+    padding: 7px 19px;
   }
 }
 @media (min-width: 1440px) {
-  .modal-content .file-info {
-    gap: 8px;
+  .modal-content .buttonGroup button {
+    padding: 8px 21px;
   }
 }
 @media (min-width: 1600px) {
-  .modal-content .file-info {
-    gap: 9px;
+  .modal-content .buttonGroup button {
+    padding: 9px 23px;
   }
 }
 @media (min-width: 1900px) {
-  .modal-content .file-info {
-    gap: 10px;
-  }
-}
-.modal-content .file-info p {
-  width: 95%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.modal-content .buttonGroup {
-  display: flex;
-  gap: 9px;
-  margin-top: 15px;
-}
-.modal-content .buttonGroup button {
-  border-radius: 80px;
-  display: flex;
-  align-items: center;
-  line-height: 125%;
-  height: 33px;
-  padding: 0 21px;
-}
-@media (min-width: 992px) {
   .modal-content .buttonGroup button {
-    height: 36px;
-    padding: 0 26px;
+    padding: 10px 25px;
   }
 }
-@media (min-width: 1200px) {
-  .modal-content .buttonGroup button {
-    height: 38px;
-    padding: 0 28px;
-  }
+.modal-content .buttonGroup button:first-child {
+  background: #EF4136;
+  color: #fff;
 }
-@media (min-width: 1350px) {
-  .modal-content .buttonGroup button {
-    height: 42px;
-    padding: 0 30px;
-  }
+.modal-content .buttonGroup button:first-child:hover {
+  background: #4F5762;
 }
 .modal-content .buttonGroup button + button {
-  border: 1px solid #D9D9D9;
   color: #4F5762;
+  border: 1px solid #D9D9D9;
+  background: #FFF;
 }
 .modal-content .buttonGroup button + button:hover {
-  background: #4F5762;
+  background: #000;
   color: #fff;
-  border-color: #7a7a7a;
-}
-.modal-content .col--4 {
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .modal-content .col--4 {
-    width: 48.277%;
-  }
-}
-@media (min-width: 992px) {
-  .modal-content .col--4 {
-    width: 32.277%;
-  }
-}
-.modal-content .col--6 {
-  width: 100%;
-}
-@media (min-width: 768px) {
-  .modal-content .col--6 {
-    width: 48.886%;
-  }
 }
 
-/* ==================================================
-   RESPONSIVE FIXES (REAL ONES)
-================================================== */
-/* MOBILE */
-@media (max-width: 767px) {
-  .modal-content {
-    padding: 20px;
-  }
-  .file-item {
-    width: 100%;
-  }
-  input[type=text],
-  input[type=number],
-  input[type=tel],
-  input[type=email] {
-    height: 48px;
-  }
-  textarea {
-    height: 120px;
-  }
-  .upload-area-container {
-    padding: 20px;
-  }
-  .file-icon + div {
-    width: calc(100% - 52px);
-  }
-}
-/* TABLET */
-@media (min-width: 768px) and (max-width: 991px) {
-  .file-item {
-    width: 100%;
-  }
-  input[type=text],
-  input[type=number],
-  input[type=tel],
-  input[type=email] {
-    height: 56px;
-  }
-  textarea {
-    height: 135px;
-  }
-}
-.careerForm .heading {
-  font-weight: 300;
-  line-height: 118.519%;
-  margin-bottom: clamp(20px, 3.74999vw, 72px);
-  font-size: clamp(22px, 2.89vw, 54px);
-}
-.careerForm .modal-dialog {
-  margin-left: auto;
-  margin-right: 0;
-  margin-top: 0;
-  max-width: 83%;
+.col--6, .col--12 {
+  position: relative;
+  margin-bottom: 20px;
 }
 @media (min-width: 768px) {
-  .careerForm .modal-dialog {
-    max-width: 70.465%;
+  .col--6, .col--12 {
+    margin-bottom: 26px;
   }
 }
-@media (min-width: 992px) {
-  .careerForm .modal-dialog {
-    max-width: 51.465%;
-  }
-}
-.careerForm .modal-dialog .modal-content {
-  padding-left: clamp(25px, 3.74999vw, 70px);
-  padding-right: clamp(25px, 3.74999vw, 70px);
-  padding-top: clamp(19px, 3.12499vw, 38px);
-  padding-bottom: clamp(30px, 3.12499vw, 60px);
-}
-.careerForm .word-count {
-  text-align: right;
-  color: #4B535D;
-  font-weight: 200;
-  margin-top: 12px;
-}
-.careerForm .attachment {
-  gap: 12px;
-}
-.careerForm .attachment p {
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.careerForm .custom-upload .d-flex {
-  gap: 12px;
-}
-.careerForm .selected-file {
-  margin-left: 40px;
-}
-.careerForm .file-info {
-  color: #4B535D;
-  font-weight: 200;
-  font-size: 12px;
-  margin-top: 8px;
+.col--6 label, .col--12 label {
+  display: block;
+  color: #0A0A0A;
+  line-height: 87.5%;
+  margin-bottom: 8px;
+  font-size: 14px;
 }
 @media (min-width: 768px) {
-  .careerForm .file-info {
-    font-size: 13px;
-  }
-}
-@media (min-width: 992px) {
-  .careerForm .file-info {
-    font-size: 13.5px;
-  }
-}
-@media (min-width: 1200px) {
-  .careerForm .file-info {
-    font-size: 14px;
-  }
-}
-@media (min-width: 1350px) {
-  .careerForm .file-info {
-    font-size: 14.5px;
-  }
-}
-@media (min-width: 1440px) {
-  .careerForm .file-info {
+  .col--6 label, .col--12 label {
     font-size: 15px;
   }
 }
-@media (min-width: 1600px) {
-  .careerForm .file-info {
-    font-size: 15.5px;
-  }
-}
-@media (min-width: 1900px) {
-  .careerForm .file-info {
+@media (min-width: 1200px) {
+  .col--6 label, .col--12 label {
     font-size: 16px;
   }
 }
-.careerForm .form-check-label {
-  line-height: 140%;
-  font-weight: 200;
-}
-.careerForm .form-check-label a {
-  color: #FFA600;
-  font-weight: 200;
-  text-decoration: underline;
-}
-
-.bgYellow {
-  background: #EF4136;
-}
-
-.bgCancel {
-  border: 1px solid #D9D9D9;
+.col--6 input::-moz-placeholder, .col--6 textarea::-moz-placeholder, .col--12 input::-moz-placeholder, .col--12 textarea::-moz-placeholder {
   background: #FFF;
+  color: #737374;
+  line-height: 87.5%;
+  font-size: 14px;
+}
+.col--6 input, .col--6 textarea, .col--6 input::placeholder, .col--6 textarea::placeholder, .col--6 input[readonly], .col--12 input, .col--12 textarea, .col--12 input::placeholder, .col--12 textarea::placeholder, .col--12 input[readonly] {
+  background: #FFF;
+  color: #737374;
+  line-height: 87.5%;
+  font-size: 14px;
+}
+@media (min-width: 992px) {
+  .col--6 input::-moz-placeholder, .col--6 textarea::-moz-placeholder, .col--12 input::-moz-placeholder, .col--12 textarea::-moz-placeholder {
+    font-size: 16px;
+  }
+  .col--6 input, .col--6 textarea, .col--6 input::placeholder, .col--6 textarea::placeholder, .col--6 input[readonly], .col--12 input, .col--12 textarea, .col--12 input::placeholder, .col--12 textarea::placeholder, .col--12 input[readonly] {
+    font-size: 16px;
+  }
+}
+.col--6 input, .col--6 textarea, .col--12 input, .col--12 textarea {
+  border: 1px solid #E2E2E2;
+  width: 100%;
+  padding: 6px 10px;
+}
+@media (min-width: 768px) {
+  .col--6 input, .col--6 textarea, .col--12 input, .col--12 textarea {
+    padding: 14px 16px;
+  }
+}
+.col--6 input, .col--12 input {
+  height: 36px;
+}
+@media (min-width: 768px) {
+  .col--6 input, .col--12 input {
+    height: 42px;
+  }
+}
+.col--6 textarea, .col--12 textarea {
+  height: 90px;
+}
+@media (min-width: 576px) {
+  .col--6 textarea, .col--12 textarea {
+    height: 126px;
+  }
+}
+
+.col--6 {
+  width: 100%;
+}
+@media (min-width: 576px) {
+  .col--6 {
+    width: 49.06%;
+  }
 }
 
 .jq-stars {

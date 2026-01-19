@@ -117,7 +117,7 @@
     }
    
 }
-.solution-long-description,.solution-short-content,.long-description{
+.solution-long-description,.solution-short-content,.long-description,.product-long-description{
     p{
         +p, +ul,ol, +h3,+h2{
             margin-top: clamp(10px, 0.84vw, 16px);

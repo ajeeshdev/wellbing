@@ -12,26 +12,17 @@
         </div>
     </section>
 
-    <section class="product-detail commonPadding-pt commonPadding-pb-120 ">
+    <section class="product-category product-detail commonPadding-pt commonPadding-pb-120 ">
         <div class="container-ctn">
             <div class="d-flex flex-wrap justify-content-between">
                 <div class="product-image-box d-flex flex-wrap justify-content-between">
-                    <div class="product-image-slider product-image-slider-init">
+                    <div class="product-image-slider ">
                         <picture><img src="public/images/products/1.jpg" width="653" height="641" alt=""></picture>
-                        <picture><img src="public/images/products/1.jpg" width="653" height="641" alt=""></picture>
-                        <picture><img src="public/images/products/1.jpg" width="653" height="641" alt=""></picture>
-                        <picture><img src="public/images/products/1.jpg" width="653" height="641" alt=""></picture>
-                        <picture><img src="public/images/products/1.jpg" width="653" height="641" alt=""></picture>
+    
                     </div>
-                    <div class="product-image-nav">
-                        <picture><img src="public/images/products/1.jpg" width="150" height="151" alt=""></picture>
-                        <picture><img src="public/images/products/1.jpg" width="150" height="151" alt=""></picture>
-                        <picture><img src="public/images/products/1.jpg" width="150" height="151" alt=""></picture>
-                        <picture><img src="public/images/products/1.jpg" width="150" height="151" alt=""></picture>
-                        <picture><img src="public/images/products/1.jpg" width="150" height="151" alt=""></picture>
-                    </div>
+                
                 </div>
-                <div class="product-short-content  product-short-content-non-category">
+                <div class="product-short-content long-description">
                     <h1>Product 1</h1>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum.</p>
@@ -50,12 +41,14 @@
                         </a>
 
                     </div>
+                    <h2>Key Features</h2>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 </div>
             </div>
 
             <div class="product-long-description list">
-                <h2>Key Features</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
                 <ul>
                     <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.</li>

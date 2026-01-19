@@ -569,7 +569,7 @@ jQuery(function ($) {
 //Product Detail Image sldier
 
 $(document).ready(function () {
-  $(".product-image-slider").slick({
+  $(".product-image-slider-init").slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
@@ -589,7 +589,7 @@ $(document).ready(function () {
     slidesToShow: 4,
     slidesToScroll: 1,
        focusOnSelect: true,
-    asNavFor: ".product-image-slider",
+    asNavFor: ".product-image-slider-init",
     dots: false,
     draggable: true,
     arrows: false,
@@ -597,6 +597,47 @@ $(document).ready(function () {
   verticalSwiping: true,
     // fade: true,
     // cssEase: "linear",
-    speed: 800
+    speed: 800,
+              responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+               vertical: false,
+  verticalSwiping: false,
+        },
+      }
+     ]
   });
+
+ $('.other-products-slider').slick({
+    slidesToShow:3,
+    slidesToScroll: 1,
+    autoplay: true,
+    cssEase: 'linear',
+    infinite: true,
+    arrows: false,
+    dots: true,
+    pauseOnHover: false,
+    pauseOnFocus: false,
+        appendDots: $(".other-products-dots"),
+     responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 575,
+        settings: {
+          slidesToShow: 1,
+        },
+      }
+    ],
 });
+
+
+});
+
+
+

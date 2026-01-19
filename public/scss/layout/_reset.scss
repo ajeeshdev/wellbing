@@ -393,7 +393,7 @@ li {
     margin-top: 18px;
     li {
       position: relative;
-      padding-left: clamp(18px, 1.87498vw, 36px);
+      padding-left: clamp(22px, 1.87498vw, 36px);
 
       &::before {
         @extend .position;
@@ -409,10 +409,14 @@ li {
       background-size: 14px;
 
         @include min(992){
-           width:24px;
-        height: 24px;
-        background-size: 90%;
+        background-size: cover;
         }
+        @include min(992){width:18px;height: 18px;}
+        @include min(1200){width:20px;height: 20px;}
+        @include min(1350){width:21px;height: 21px;}
+        @include min(1440){width:22px;height: 22px;}
+        @include min(1600){width:23px;height: 23px;}
+        @include min(1900){width:24px;height: 24px;}
       }
 
       +li {
@@ -439,7 +443,7 @@ span.error {
 
 .error-message {
   color: #FF4040;
-  display: none;
+  display: block;
   font-size: 12px;
   position: absolute;
   bottom: -20px;
@@ -924,9 +928,8 @@ input[type=number] {
 
 
 .modal-backdrop.show {
-  opacity: 1;
-  background: rgb(25, 33, 60) !important;
-  opacity: 0.53;
+  background: rgba(3, 6, 16, 0.80);
+      opacity: 1;
 }
 
 
