@@ -12,9 +12,7 @@
       list-style:decimal
     }
   }
-  h1{
-    font-weight: 600;
-  }
+
   h3{
     color: $black;
       font-size: clamp(18px, 1.3vw, 24px);
@@ -26,6 +24,6 @@
 
   }
   p a, li a{
-    color: #FFA600;
+    color: $primaryColor;
   }
 }

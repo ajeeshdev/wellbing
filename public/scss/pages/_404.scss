@@ -3,7 +3,56 @@
         padding-top: clamp(80px, 7.97vw, 153px);
         padding-bottom: clamp(80px, 7.97vw, 120px);
     
-   
+   /* Float whole illustration */
+.error-illustration svg {
+  animation: float 4s ease-in-out infinite;
+      height: fit-content;
+  width: clamp(300px, 22.917vw, 440px);
+}
+
+/* Face subtle pulse */
+#face {
+  transform-origin: center;
+  animation: facePulse 3.5s ease-in-out infinite;
+}
+
+/* Eyes blink */
+#eyes {
+  transform-origin: center;
+  animation: blink 2s infinite;
+}
+#eyes1 {
+  transform-origin: center;
+  animation: blink 2s infinite;
+}
+
+/* Mouth bounce */
+#mouth {
+  transform-origin: center;
+  animation: mouthBounce 2.5s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes facePulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+@keyframes blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  92% { transform: scaleY(0.1); }
+}
+
+@keyframes mouthBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
     img{
 
         margin-bottom:  clamp(30px, 3.3vw, 62px);
@@ -37,11 +86,13 @@
     }
 
     p{
-        color: #3E444A;
+       color: #737374;
+
         line-height: 160%;
         margin-left: auto;
         margin-right: auto;
     //  width: 32.218%;
+    margin-top: 14px;
     width: 80%;
     @include min(768){
         width: clamp(498px, 32.084vw, 616px);
@@ -51,18 +102,24 @@
 
     }
     h1{
-        color: $black;
-        line-height: 100% ;
         font-weight: 700;
-        font-size: clamp(18px, 1.9vw, 36px);
-        @include max(575){
-            margin-bottom: 20px;
-        }
+    }
+    h3{
+        color: #000;
+    }
+    // h1{
+    //     color: $black;
+    //     line-height: 100% ;
+    //     font-weight: 700;
+    //     font-size: clamp(18px, 1.9vw, 36px);
+    //     @include max(575){
+    //         margin-bottom: 20px;
+    //     }
 
         
-    }
+    // }
     .buttonwrapper{
-        margin-top: clamp(18px, 2.14vw, 41px);
+        margin-top: clamp(18px, 1.876vw, 36px);
         gap:  clamp(7px, 0.7vw, 13px);
         a{
             border-radius: 80px;
@@ -74,7 +131,7 @@
             height: 42px;
             padding: 17px 30px;
             &:first-child{
-                background: #FFA600;
+                background: $primaryColor;
             }
         }
         a+ a{

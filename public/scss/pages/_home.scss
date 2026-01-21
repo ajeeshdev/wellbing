@@ -1100,10 +1100,20 @@ box-shadow: 0 0 10px 10px rgba(239, 65, 54, 0.08);
         @include min(1600){margin-bottom: 34px;}
         @include min(1900){margin-bottom: 36px;}
     }
-    &-item{
-        background: #fff;
-        border-radius: 20px;
-        width: 250px;
+    .slick-list{
+              margin: 0 -5px;
+        @include min(768){margin: 0 -8px;}
+        @include min(992){margin: 0 -11px; }
+        @include min(1200){margin: 0 -12px;}
+        @include min(1350){margin: 0 -14px;}
+        @include min(1440){margin: 0 -15.5px;}
+        @include min(1600){margin: 0 -16px;}
+        @include min(1900){margin: 0 -16.5px;}
+
+    }
+    .slick-slide{
+               border-radius: 20px;
+         width: 250px;
         margin: 0 5px;
         @include min(768){margin: 0 8px;}
         @include min(992){margin: 0 11px;       width: clamp(387px, 40.365vw, 775px);}
@@ -1113,7 +1123,7 @@ box-shadow: 0 0 10px 10px rgba(239, 65, 54, 0.08);
         @include min(1600){margin: 0 16px;}
         @include min(1900){margin: 0 16.5px;}
 
-        > div{
+         > div{
              padding: 20px 14px 20px;
              @include min(768){padding: 24px 18px 12px;}
              @include min(992){padding: 26px 20px 14px;}
@@ -1124,13 +1134,25 @@ box-shadow: 0 0 10px 10px rgba(239, 65, 54, 0.08);
              @include min(1900){padding: 36px 30px 24px;}
 
         }
+        picture{
+            img{
+                      border-radius: 20px 20px 0 0;
+            }
+        }
+    }
+    &-item{
+        background: #fff;
+ 
+       
+
+       
 
     }
     picture{
         img{
             width: 100%;
             object-fit: cover;
-            border-radius: 20px 20px 0 0;
+      
             height: 166.615px;
             @include min(768){ height: 276.615px;}
             @include min(992){ height: 219.615px;}
@@ -1158,13 +1180,7 @@ box-shadow: 0 0 10px 10px rgba(239, 65, 54, 0.08);
             line-height:  133.333% ;
             font-size: clamp(14px, 1.25vw, 24px);
         }
-        P{
-            display: none;
-
-            -webkit-line-clamp: 7;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
+       
     }
     .author{
         @include max(1199){
@@ -1211,7 +1227,17 @@ box-shadow: 0 0 10px 10px rgba(239, 65, 54, 0.08);
             align-items: center;
         }
     }
-    .slick-active.slick-current{
+   .blog-slider-init{
+    .blog-short-content{
+         P{
+            display: none;
+
+            -webkit-line-clamp: 7;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+    }
+     .slick-active.slick-current{
      @include min(992){
            transition: 0.5s ease all;
         width: clamp(436px, 45.417vw, 872px);
@@ -1253,6 +1279,7 @@ box-shadow: 0 0 10px 10px rgba(239, 65, 54, 0.08);
         }
      }
     }
+   }
 }
 
 

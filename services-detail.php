@@ -7,7 +7,7 @@
         <ul class="d-flex flex-wrap align-items-center">
             <li><a href="index.php">Home</a></li>
             <li>Solutions</li>
-            <li>Turnkey Water Treatment System</li>
+            <li>Onsite Services</li>
         </ul>
     </div>
 </section>
@@ -123,9 +123,9 @@
             </aside>
             <article>
                 <div class="head-container">
-                    <h1>Turnkey Water Treatment System</h1>
+                    <h1>Onsite Services</h1>
                     <picture>
-                        <img src="public/images/solutions/1.jpg" width="1098" height="499" alt="" class="img-fluid">
+                        <img src="public/images/blog/5.jpg" width="1098" height="499" alt="" class="img-fluid">
                     </picture>
                 </div>
                 <div class="solution-long-description">
@@ -161,8 +161,8 @@
                         of type and scrambled it to make a type specimen book. It has survived not only five centuries,
                         but also the leap into electronic typesetting, remaining essentially unchanged. It was
                         popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum.</p>
-                    <picture><img src="public/images/solutions/2.jpg" height="326" width="640" alt="" class="img-fluid w-100"></picture>
-                    <picture><img src="public/images/solutions/3.jpg" height="326" width="430" alt="" class="img-fluid w-100"></picture>
+                    <picture><img src="public/images/solutions/4.jpg" height="326" width="640" alt="" class="img-fluid w-100"></picture>
+                    <picture><img src="public/images/solutions/5.jpg" height="326" width="430" alt="" class="img-fluid w-100"></picture>
 
                 </div>
 

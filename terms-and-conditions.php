@@ -1,16 +1,22 @@
 <?php include('includes/header.php') ?>
-<section class="innner-banner position-relative">
-    <picture>
-        <img src="public/images/inner-banner.jpg" width="1241" height="406" alt="Policy Page Banner">
-    </picture>
-
+<section class="inner-banner position-relative">
+    <picture><img src="public/images/inner-banner.jpg" width="1920" height="359" alt=""></picture>
 </section>
+    <section class="bread-crumbs">
+        <div class="container-ctn">
+            <ul class="d-flex flex-wrap align-items-center">
+                <li><a href="index.php">Home</a></li>
+                <li>Terms and conditions</li>
+            </ul>
+        </div>
+    </section>
 
 
 
-<section class="policy list">
+
+<section class="policy list commonPadding-pt commonPadding-pb-120">
     <div class="container-ctn">
-        <h2 class="text-center">Terms and Conditions</h2>
+        <h1 class="text-center h2">Terms and Conditions</h1>
        <ul>
     <li>
         <h3>Acceptance Of Terms</h3>

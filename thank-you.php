@@ -1,9 +1,6 @@
 <?php include('includes/header.php') ?>
-<section class="innner-banner position-relative">
-    <picture>
-        <img src="public/images/inner-banner.jpg" width="1241" height="406" alt="Thank you Banner">
-    </picture>
-
+<section class="inner-banner position-relative">
+    <picture><img src="public/images/inner-banner.jpg" width="1920" height="359" alt=""></picture>
 </section>
 
 

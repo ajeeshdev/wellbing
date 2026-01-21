@@ -337,7 +337,7 @@
     <section class="blog commonPadding">
         <h2 class="text-center">Our Blogs</h2>
         <div class="container-ctn">
-            <div class="blog-slider">
+            <div class="blog-slider blog-slider-init">
                 <div class="blog-item">
                     <picture><img src="public/images/blog/1.jpg" width="775" height="276" alt="" class="img-fluid"></picture>
                     <div>
